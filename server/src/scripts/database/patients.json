@@ -1,0 +1,121 @@
+[
+  {
+    "email": "patient@test.com",
+    "profile": {
+      "firstName": "Γιώργος", "lastName": "Δημητρίου",
+      "dateOfBirth": "1985-04-15", "gender": "male",
+      "phone": "6944123456",
+      "address": { "street": "Ερμού 45", "city": "Αθήνα", "coords": { "lat": 37.9755, "lng": 23.7332 } },
+      "language": "el"
+    },
+    "familyMembers": [
+      {
+        "id": "fm-001", "name": "Μαρία Δημητρίου", "relation": "spouse",
+        "dateOfBirth": "1987-08-22", "gender": "female",
+        "conditions": ["Hypothyroidism","Anxiety"],
+        "medications": ["Levothyroxine 50mcg","Escitalopram 10mg"],
+        "notes": "Τακτικός έλεγχος TSH κάθε 6 μήνες. Ψυχιατρική παρακολούθηση για άγχος."
+      },
+      {
+        "id": "fm-002", "name": "Κώστας Δημητρίου", "relation": "child",
+        "dateOfBirth": "2015-03-10", "gender": "male",
+        "conditions": ["Asthma","Allergic Rhinitis"],
+        "medications": ["Salbutamol inhaler PRN","Fluticasone 50mcg 2x daily"],
+        "notes": "Άσθμα ήπιου βαθμού. Αλλεργία σε σκόνη και γύρη. Φθινοπωρινές παροξύνσεις."
+      },
+      {
+        "id": "fm-003", "name": "Ελευθερία Δημητρίου", "relation": "parent",
+        "dateOfBirth": "1955-11-30", "gender": "female",
+        "conditions": ["Type 2 Diabetes","Hypertension","Osteoporosis"],
+        "medications": ["Metformin 1000mg","Amlodipine 10mg","Alendronate 70mg weekly"],
+        "notes": "Μητέρα ασθενή. ΣΔ2 καλά ρυθμισμένος. Ετήσια DEXA."
+      }
+    ],
+    "aiContext": {
+      "communicationStyle": "plain",
+      "knownConditions": ["Hypertension Stage 1","Prediabetes","Iron Deficiency (resolved)"],
+      "allergies": ["Penicillin"],
+      "totalSessions": 12,
+      "lastSessionSummary": "Ο ασθενής ρώτησε για διατροφή στο prediabetes και τη σωστή ώρα λήψης φαρμάκων.",
+      "healthSummary": "40χρονος άνδρας με υπέρταση stage 1 (ελέγχεται με Amlodipine 5mg). Prediabetes — HbA1c 5.9% τελευταίο check-up. Αλλεργία στην πενικιλλίνη. Οικογενειακό ιστορικό: πατέρας έμφραγμα 62 ετών. Παρακολουθεί αρτηριακή πίεση καθημερινά, έχει μειώσει αλάτι. Στόχος: αποφυγή εξέλιξης σε ΣΔ2."
+    },
+    "preferences": { "notificationChannels": ["email","push"], "language": "el", "budgetRange": "standard" }
+  },
+  {
+    "email": "patient2@test.com",
+    "profile": {
+      "firstName": "Ελένη", "lastName": "Παπαδάκη",
+      "dateOfBirth": "1992-11-03", "gender": "female",
+      "phone": "6977654321",
+      "address": { "street": "Βενιζέλου 12", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6401, "lng": 22.9444 } },
+      "language": "el"
+    },
+    "familyMembers": [
+      {
+        "id": "fm-004", "name": "Σταύρος Παπαδάκης", "relation": "parent",
+        "dateOfBirth": "1960-05-14", "gender": "male",
+        "conditions": ["Atrial Fibrillation","Hypertension","Dyslipidaemia"],
+        "medications": ["Apixaban 5mg","Bisoprolol 5mg","Rosuvastatin 20mg"],
+        "notes": "Πατέρας. Κολπική μαρμαρυγή, αντιπηκτική αγωγή. Τακτικός καρδιολογικός έλεγχος."
+      },
+      {
+        "id": "fm-005", "name": "Κατερίνα Παπαδάκη", "relation": "sibling",
+        "dateOfBirth": "1995-02-28", "gender": "female",
+        "conditions": ["PCOS","Hypothyroidism"],
+        "medications": ["Combined OCP","Levothyroxine 25mcg"],
+        "notes": "Αδελφή. PCOS, παρακολούθηση γυναικολόγου. Υποθυρεοειδισμός ήπιου βαθμού."
+      }
+    ],
+    "aiContext": {
+      "communicationStyle": "technical",
+      "knownConditions": ["PCOS","Generalised Anxiety Disorder","Migraine with aura"],
+      "allergies": ["Ibuprofen (GI intolerance)"],
+      "totalSessions": 8,
+      "lastSessionSummary": "Η ασθενής ρώτησε για σχέση PCOS και άγχους, και για ασφαλή αναλγητικά για ημικρανία.",
+      "healthSummary": "32χρονη γυναίκα με PCOS (ανώμαλος κύκλος, ακμή στο πηγούνι, ελαφρά υπερανδρογοναιμία). ΓΑΔ υπό CBT θεραπεία. Ημικρανία με αύρα — αποφεύγει αντισυλληπτικά. Αλλεργία σε ιβουπροφαίνη (γαστρεντερική ανοχή). Ζει στη Θεσσαλονίκη, εργάζεται ως λογίστρια."
+    },
+    "preferences": { "notificationChannels": ["push"], "language": "el", "budgetRange": "premium" }
+  },
+  {
+    "email": "patient3@test.com",
+    "profile": {
+      "firstName": "Νίκος", "lastName": "Αλεξίου",
+      "dateOfBirth": "1968-07-22", "gender": "male",
+      "phone": "6930987654",
+      "address": { "street": "Πατησίων 210", "city": "Αθήνα", "coords": { "lat": 37.9980, "lng": 23.7310 } },
+      "language": "el"
+    },
+    "familyMembers": [
+      {
+        "id": "fm-006", "name": "Σοφία Αλεξίου", "relation": "spouse",
+        "dateOfBirth": "1970-03-08", "gender": "female",
+        "conditions": ["Rheumatoid Arthritis","Osteoporosis"],
+        "medications": ["Methotrexate 15mg weekly","Folic acid 5mg","Alendronate 70mg","Calcium+D3"],
+        "notes": "Σύζυγος. ΡΑ σε ύφεση με MTX. Τακτικός ρευματολογικός έλεγχος."
+      },
+      {
+        "id": "fm-007", "name": "Γιάννης Αλεξίου", "relation": "child",
+        "dateOfBirth": "1995-09-15", "gender": "male",
+        "conditions": ["Asthma"],
+        "medications": ["Salbutamol PRN"],
+        "notes": "Υιός 30 ετών. Άσθμα κόπωσης. Σπάνια χρήση salbutamol."
+      },
+      {
+        "id": "fm-008", "name": "Ελπίδα Αλεξίου", "relation": "parent",
+        "dateOfBirth": "1942-12-01", "gender": "female",
+        "conditions": ["Alzheimer's Disease Stage 2","Hypertension","Type 2 Diabetes"],
+        "medications": ["Donepezil 10mg","Ramipril 5mg","Metformin 500mg"],
+        "notes": "Μητέρα 83 ετών. Αλτσχάιμερ stage 2. Χρειάζεται συνοδεία σε ραντεβού."
+      }
+    ],
+    "aiContext": {
+      "communicationStyle": "plain",
+      "knownConditions": ["Type 2 Diabetes","Hypertension Stage 2","Knee Osteoarthritis bilateral","Dyslipidaemia","Overweight BMI 29"],
+      "allergies": ["Sulfonamides","Aspirin (intolerance)"],
+      "totalSessions": 18,
+      "lastSessionSummary": "Ο ασθενής ρώτησε για διαχείριση πόνου γονάτου, σχέση βάρους και γλυκόζης, και αλληλεπίδραση φαρμάκων.",
+      "healthSummary": "57χρονος άνδρας με ΣΔ2 (HbA1c 7.2%), υπέρταση stage 2 (πίεση 155/95 υπό αγωγή), αμφίπλευρη οστεοαρθρίτιδα γονάτων (χωρίς χειρουργείο ακόμα), δυσλιπιδαιμία (LDL 145). Αλλεργία σε σουλφοναμίδες και ασπιρίνη. Βάρος 92 kg, ύψος 1.78 m. Δεν ασκείται λόγω πόνου γονάτων."
+    },
+    "preferences": { "notificationChannels": ["email","push","sms"], "language": "el", "budgetRange": "standard" }
+  }
+]

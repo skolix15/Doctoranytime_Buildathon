@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedPlatform — Deployment Guide</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      padding: 0.25rem 0.85rem;
+      font-size: 0.78rem;
+      color: #38bdf8;
+      margin-top: 0.75rem;
+      letter-spacing: 0.03em;
+    }
+
+    .warning {
+      background: #2d1b00;
+      border: 1px solid #f59e0b;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.9rem;
+    }
+
+    .warning .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+    .warning strong { color: #fbbf24; }
+
+    .section {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-number {
+      background: #3b82f6;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 999px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .section h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 1.25rem 0 0.6rem;
+    }
+
+    .section h3:first-of-type { margin-top: 0; }
+
+    p { margin-bottom: 0.75rem; color: #cbd5e1; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ol, ul {
+      padding-left: 1.4rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+
+    li { margin-bottom: 0.4rem; }
+
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 0.82rem;
+      background: #0f172a;
+      color: #7dd3fc;
+      border-radius: 4px;
+      padding: 0.15em 0.45em;
+      border: 1px solid #1e3a5f;
+    }
+
+    pre {
+      background: #0f172a;
+      border: 1px solid #1e3a5f;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0.75rem 0;
+      position: relative;
+    }
+
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.83rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .comment { color: #475569; }
+
+    .env-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .env-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      background: #0f172a;
+      color: #64748b;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid #334155;
+    }
+
+    .env-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid #1e293b;
+      color: #cbd5e1;
+      vertical-align: top;
+    }
+
+    .env-table tr:last-child td { border-bottom: none; }
+
+    .env-table td:first-child code {
+      color: #a78bfa;
+      border-color: #3b1f6b;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border-radius: 4px;
+      padding: 0.1em 0.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-server { background: #1e3a5f; color: #38bdf8; }
+    .tag-client { background: #1a2e1a; color: #4ade80; }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .service-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .service-card .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card.server .label { color: #38bdf8; }
+    .service-card.client .label { color: #4ade80; }
+
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.83rem;
+    }
+
+    .service-card li {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      color: #94a3b8;
+    }
+
+    .service-card li span:first-child {
+      color: #475569;
+      flex-shrink: 0;
+      width: 4.5rem;
+    }
+
+    .service-card li span:last-child { color: #e2e8f0; word-break: break-all; }
+
+    .creds {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 500px) {
+      .creds { grid-template-columns: 1fr; }
+    }
+
+    .cred-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+
+    .cred-card .role {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .cred-card p { color: #e2e8f0; font-size: 0.88rem; margin: 0; }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #475569;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>MedPlatform — Deployment Guide</h1>
+    <p>Full-stack deploy (React + Node.js + MongoDB) for a 2–3 day preview window</p>
+    <span class="badge">Railway · MongoDB Atlas · Always-on · Free</span>
+  </header>
+
+  <div class="warning">
+    <span class="icon">⚠️</span>
+    <div>
+      <strong>Never commit <code>.env</code> to GitHub.</strong>
+      Add <code>.env</code> to your <code>.gitignore</code> before pushing.
+      All secrets (JWT keys, API keys) must be set as environment variables on the hosting platform.
+    </div>
+  </div>
+
+  <!-- STEP 0 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">0</div>
+      <h2>Add .gitignore &amp; push to GitHub</h2>
+    </div>
+    <p>Make sure <code>.env</code> files are excluded, then push the repo.</p>
+    <pre><code><span class="comment"># From the project root</span>
+echo ".env" >> .gitignore
+echo "node_modules/" >> .gitignore
+
+git init
+git add .
+git commit -m "initial commit"
+
+<span class="comment"># Create a new repo on github.com, then:</span>
+git remote add origin https://github.com/YOUR_USERNAME/medplatform.git
+git push -u origin main</code></pre>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">1</div>
+      <h2>Create a free MongoDB Atlas cluster</h2>
+    </div>
+    <ol>
+      <li>Go to <a href="https://mongodb.com/atlas" target="_blank">mongodb.com/atlas</a> → create a free account</li>
+      <li>Create a new project → build a <strong>Free (M0)</strong> cluster</li>
+      <li>Under <strong>Database Access</strong>, add a user with a strong password</li>
+      <li>Under <strong>Network Access</strong>, add IP <code>0.0.0.0/0</code> (allow all — fine for a short demo)</li>
+      <li>Click <strong>Connect → Drivers</strong> → copy the connection string:</li>
+    </ol>
+    <pre><code>mongodb+srv://&lt;user&gt;:&lt;password&gt;@cluster0.xxxxx.mongodb.net/BuildathonDB?retryWrites=true&amp;w=majority</code></pre>
+    <p>Save this string — you'll use it as <code>MONGODB_URI</code> in the next steps.</p>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">2</div>
+      <h2>Deploy on Railway</h2>
+    </div>
+    <p>
+      Go to <a href="https://railway.app" target="_blank">railway.app</a> → sign in with GitHub →
+      <strong>New Project → Deploy from GitHub repo</strong> → select <code>medplatform</code>.
+    </p>
+    <p>Railway will create one service by default. You need <strong>two services</strong> — add the second via <strong>+ New Service → GitHub Repo</strong> (same repo, different root dir).</p>
+
+    <div class="service-grid">
+      <div class="service-card server">
+        <div class="label">Service 1 — Backend</div>
+        <ul>
+          <li><span>Root dir</span><span><code>server</code></span></li>
+          <li><span>Build</span><span><code>npm install && npm run build</code></span></li>
+          <li><span>Start</span><span><code>npm start</code></span></li>
+        </ul>
+      </div>
+      <div class="service-card client">
+        <div class="label">Service 2 — Frontend</div>
+        <ul>
+          <li><span>Root dir</span><span><code>client</code></span></li>
+          <li><span>Build</span><span><code>npm install && npm run build</code></span></li>
+          <li><span>Start</span><span><code>npx serve dist -p $PORT</code></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Backend environment variables</h3>
+    <table class="env-table">
+      <thead>
+        <tr><th>Variable</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>PORT</code></td><td>3001</td></tr>
+        <tr><td><code>NODE_ENV</code></td><td>production</td></tr>
+        <tr><td><code>MONGODB_URI</code></td><td>Your Atlas connection string from Step 1</td></tr>
+        <tr><td><code>JWT_SECRET</code></td><td>Your secret from <code>.env</code></td></tr>
+        <tr><td><code>JWT_REFRESH_SECRET</code></td><td>Your secret from <code>.env</code></td></tr>
+        <tr><td><code>JWT_EXPIRES_IN</code></td><td>15m</td></tr>
+        <tr><td><code>JWT_REFRESH_EXPIRES_IN</code></td><td>7d</td></tr>
+        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Your key from <code>.env</code></td></tr>
+        <tr><td><code>ANTHROPIC_MODEL</code></td><td>claude-sonnet-4-5</td></tr>
+        <tr><td><code>ANTHROPIC_FAST_MODEL</code></td><td>claude-haiku-4-5</td></tr>
+        <tr><td><code>CLIENT_URL</code></td><td>Your Railway frontend URL (add after frontend is deployed)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Frontend environment variables</h3>
+    <table class="env-table">
+      <thead>
+        <tr><th>Variable</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>VITE_API_URL</code></td><td>Your Railway backend URL (e.g. <code>https://medplatform-server.up.railway.app</code>)</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:1rem;">
+      Railway generates a public URL for each service automatically under <strong>Settings → Networking → Generate Domain</strong>.
+    </p>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">3</div>
+      <h2>Seed the database</h2>
+    </div>
+    <p>After the backend service is running, open the Railway dashboard → backend service → <strong>Settings → Shell</strong> tab and run:</p>
+    <pre><code>npm run seed</code></pre>
+    <p>This populates doctors, patients, and Q&amp;A data.</p>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">4</div>
+      <h2>Fix the Vite proxy for production</h2>
+    </div>
+    <p>
+      The current <code>vite.config.ts</code> proxies <code>/api</code> to <code>localhost:3001</code> — this only works locally.
+      In production the frontend must call the real backend URL. Two options:
+    </p>
+
+    <h3>Option A — use VITE_API_URL in fetch calls (preferred)</h3>
+    <p>Wherever your frontend calls the API, prefix with the env variable:</p>
+    <pre><code><span class="comment">// Before</span>
+fetch('/api/doctors')
+
+<span class="comment">// After</span>
+fetch(`${import.meta.env.VITE_API_URL}/api/doctors`)</code></pre>
+
+    <h3>Option B — keep the proxy, serve from same domain</h3>
+    <p>Build the React app into the server's <code>public/</code> folder and serve both from the same Railway service. Simpler but requires adding static-file serving to Express.</p>
+  </div>
+
+  <!-- Test credentials -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">✓</div>
+      <h2>Test credentials</h2>
+    </div>
+    <p>Use these accounts to demo the platform after seeding:</p>
+    <div class="creds">
+      <div class="cred-card">
+        <div class="role">Patient</div>
+        <p>patient@test.com<br />Test1234!</p>
+      </div>
+      <div class="cred-card">
+        <div class="role">Doctor</div>
+        <p>doctor@test.com<br />Test1234!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teardown -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">!</div>
+      <h2>Teardown after 2–3 days</h2>
+    </div>
+    <p>To stay within the free tier and avoid any charges:</p>
+    <ol>
+      <li>Railway dashboard → your project → <strong>Settings → Delete Project</strong></li>
+      <li>MongoDB Atlas → Clusters → <strong>Terminate</strong> (or just leave the free M0 — it never expires)</li>
+    </ol>
+  </div>
+
+  <footer>
+    MedPlatform · Buildathon · Deployment guide generated 2026-05-13
+  </footer>
+
+</div>
+</body>
+</html>

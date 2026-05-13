@@ -1,0 +1,353 @@
+[
+  {
+    "email": "doctor@test.com",
+    "profile": { "firstName": "Νικόλαος", "lastName": "Παπαδόπουλος", "bio": "Καρδιολόγος με 15 χρόνια εμπειρία στο Ωνάσειο. Ειδικός στην καρδιακή ανεπάρκεια και τις αρρυθμίες.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Cardiology"], "subSpecialties": ["Heart Failure","Echocardiography","Arrhythmia"],
+    "conditions": ["Hypertension","Atrial Fibrillation","Heart Failure","Coronary Artery Disease","Angina"],
+    "locations": [{ "clinicName": "Ωνάσειο Καρδιοχειρουργικό Κέντρο", "address": "Λεωφ. Συγγρού 356", "city": "Αθήνα", "coords": { "lat": 37.9401, "lng": 23.7032 }, "phone": "2109493000" }],
+    "stats": { "totalPatients": 1240, "avgRating": 4.9, "rebookRate": 87, "answerCount": 112 },
+    "cvData": { "education": ["Ιατρική Αθηνών","Fellowship Cardiology Harvard"], "certifications": ["European Board of Cardiology"], "experience": ["15 χρόνια Ωνάσειο Κέντρο"], "publications": ["NEJM 2019","Circulation 2021"] }
+  },
+  {
+    "email": "ortho@medplatform.gr",
+    "profile": { "firstName": "Μαρία", "lastName": "Γεωργίου", "bio": "Ορθοπεδικός χειρουργός ειδικευμένη σε αρθροπλαστικές ισχίου και γόνατος.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Orthopaedics"], "subSpecialties": ["Hip Replacement","Knee Arthroplasty","Sports Injuries"],
+    "conditions": ["Osteoarthritis","Sports Injuries","Fractures","Scoliosis","Tendinopathy"],
+    "locations": [{ "clinicName": "KAT Hospital", "address": "Νίκης 2", "city": "Αθήνα", "coords": { "lat": 38.0432, "lng": 23.8012 }, "phone": "2108090000" }],
+    "stats": { "totalPatients": 890, "avgRating": 4.8, "rebookRate": 78, "answerCount": 67 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","MSc Orthopaedics London"], "certifications": ["EFORT"], "experience": ["12 χρόνια KAT Hospital"], "publications": [] }
+  },
+  {
+    "email": "derm@medplatform.gr",
+    "profile": { "firstName": "Ελένη", "lastName": "Αναστασίου", "bio": "Δερματολόγος – Αφροδισιολόγος. Ειδική σε δερματοσκόπηση και κοσμητική δερματολογία.", "languages": ["el","en","fr"], "title": "MD" },
+    "specialties": ["Dermatology"], "subSpecialties": ["Dermatoscopy","Cosmetic Dermatology","Laser"],
+    "conditions": ["Acne","Psoriasis","Eczema","Melanoma screening","Rosacea","Vitiligo"],
+    "locations": [{ "clinicName": "DermAthens Clinic", "address": "Πανεπιστημίου 22", "city": "Αθήνα", "coords": { "lat": 37.9755, "lng": 23.7332 }, "phone": "2103621000" }],
+    "stats": { "totalPatients": 2100, "avgRating": 4.7, "rebookRate": 82, "answerCount": 155 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["EADV Member"], "experience": ["10 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "neuro@medplatform.gr",
+    "profile": { "firstName": "Δημήτριος", "lastName": "Σταματίου", "bio": "Νευρολόγος ειδικευμένος σε ημικρανίες, επιληψία και νόσο Parkinson.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Neurology"], "subSpecialties": ["Headache","Movement Disorders","Epilepsy"],
+    "conditions": ["Migraine","Epilepsy","Parkinson's Disease","Multiple Sclerosis","Essential Tremor"],
+    "locations": [{ "clinicName": "Νευρολογικό Κέντρο Αθηνών", "address": "Βασ. Σοφίας 76", "city": "Αθήνα", "coords": { "lat": 37.9787, "lng": 23.7531 }, "phone": "2107200000" }],
+    "stats": { "totalPatients": 760, "avgRating": 4.9, "rebookRate": 88, "answerCount": 89 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Νευρολογία"], "certifications": ["EAN"], "experience": ["18 χρόνια Ευαγγελισμός"], "publications": ["Cephalalgia 2020"] }
+  },
+  {
+    "email": "paed@medplatform.gr",
+    "profile": { "firstName": "Σοφία", "lastName": "Κωνσταντίνου", "bio": "Παιδίατρος με εξειδίκευση στις παιδικές λοιμώξεις και την αναπτυξιακή παιδιατρική.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Paediatrics"], "subSpecialties": ["Infectious Disease","Neonatology","Developmental Paediatrics"],
+    "conditions": ["Childhood Infections","Asthma","Allergies","Growth Disorders","ADHD"],
+    "locations": [{ "clinicName": "Παιδιατρείο Κωνσταντίνου", "address": "Χαλκοκονδύλη 25", "city": "Αθήνα", "coords": { "lat": 37.9830, "lng": 23.7267 }, "phone": "2105228000" }],
+    "stats": { "totalPatients": 3400, "avgRating": 5.0, "rebookRate": 95, "answerCount": 203 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["EAP"], "experience": ["20 χρόνια Αγία Σοφία"], "publications": [] }
+  },
+  {
+    "email": "gp@medplatform.gr",
+    "profile": { "firstName": "Αλέξανδρος", "lastName": "Μιχαλόπουλος", "bio": "Γενικός Ιατρός. Πρωτοβάθμια φροντίδα υγείας για όλη την οικογένεια.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["General Practice"], "subSpecialties": [],
+    "conditions": ["Diabetes","Hypertension","Respiratory Infections","Preventive Care","Obesity"],
+    "locations": [{ "clinicName": "Ιατρείο Μιχαλόπουλου", "address": "Αχαρνών 120", "city": "Αθήνα", "coords": { "lat": 37.9944, "lng": 23.7341 }, "phone": "2108213000" }],
+    "stats": { "totalPatients": 4200, "avgRating": 4.6, "rebookRate": 70, "answerCount": 312 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["WONCA"], "experience": ["25 χρόνια πρωτοβάθμια φροντίδα"], "publications": [] }
+  },
+  {
+    "email": "ophth@medplatform.gr",
+    "profile": { "firstName": "Αικατερίνη", "lastName": "Λυκούρης", "bio": "Οφθαλμίατρος. Εξειδίκευση σε laser διόρθωση και χειρουργική καταρράκτη.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Ophthalmology"], "subSpecialties": ["Cataract Surgery","LASIK","Glaucoma"],
+    "conditions": ["Myopia","Cataract","Glaucoma","Macular Degeneration","Dry Eyes"],
+    "locations": [{ "clinicName": "Optics Eye Clinic", "address": "Κηφισίας 115", "city": "Αθήνα", "coords": { "lat": 38.0132, "lng": 23.7821 }, "phone": "2106843000" }],
+    "stats": { "totalPatients": 1800, "avgRating": 4.8, "rebookRate": 80, "answerCount": 74 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["ESO"], "experience": ["14 χρόνια Οφθαλμολογική Κλινική"], "publications": [] }
+  },
+  {
+    "email": "psych@medplatform.gr",
+    "profile": { "firstName": "Ιωάννης", "lastName": "Βασιλείου", "bio": "Ψυχίατρος. CBT και φαρμακοθεραπεία για κατάθλιψη, άγχος και διπολική διαταραχή.", "languages": ["el","en"], "title": "MD, MSc" },
+    "specialties": ["Psychiatry"], "subSpecialties": ["Depression","Anxiety","CBT","Bipolar"],
+    "conditions": ["Depression","Anxiety Disorders","Bipolar Disorder","PTSD","OCD","Insomnia"],
+    "locations": [{ "clinicName": "MindCare Athens", "address": "Εμμανουήλ Μπενάκη 14", "city": "Αθήνα", "coords": { "lat": 37.9839, "lng": 23.7378 }, "phone": "2103811000" }],
+    "stats": { "totalPatients": 520, "avgRating": 4.9, "rebookRate": 91, "answerCount": 98 },
+    "cvData": { "education": ["Ιατρική Αθηνών","MSc Mental Health"], "certifications": ["EPA"], "experience": ["16 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "endo@medplatform.gr",
+    "profile": { "firstName": "Χρήστος", "lastName": "Παπαθανασίου", "bio": "Ενδοκρινολόγος. Εξειδίκευση σε διαβήτη τύπου 1 & 2, θυρεοειδή και παχυσαρκία.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Endocrinology"], "subSpecialties": ["Diabetes","Thyroid Disorders","Obesity"],
+    "conditions": ["Type 1 Diabetes","Type 2 Diabetes","Hypothyroidism","Hyperthyroidism","Obesity","Prediabetes"],
+    "locations": [{ "clinicName": "Διαβητολογικό Κέντρο", "address": "Λεωφ. Αλεξάνδρας 86", "city": "Αθήνα", "coords": { "lat": 37.9902, "lng": 23.7478 }, "phone": "2106493000" }],
+    "stats": { "totalPatients": 1100, "avgRating": 4.8, "rebookRate": 85, "answerCount": 131 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Endocrinology"], "certifications": ["EASD"], "experience": ["17 χρόνια Λαϊκό Νοσοκομείο"], "publications": ["Diabetologia 2022"] }
+  },
+  {
+    "email": "gyn@medplatform.gr",
+    "profile": { "firstName": "Άννα", "lastName": "Θεοδωρίδου", "bio": "Γυναικολόγος – Μαιευτήρας. Εξειδίκευση σε γονιμότητα, PCOS και εμμηνόπαυση.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Gynaecology"], "subSpecialties": ["Obstetrics","Menopause","Fertility","PCOS"],
+    "conditions": ["PCOS","Endometriosis","Menstrual Disorders","Pregnancy Care","Menopause"],
+    "locations": [{ "clinicName": "Μαιευτήριο Μητέρα", "address": "Ερυθρού Σταυρού 6", "city": "Αθήνα", "coords": { "lat": 37.9977, "lng": 23.7756 }, "phone": "2106868000" }],
+    "stats": { "totalPatients": 2300, "avgRating": 4.9, "rebookRate": 88, "answerCount": 178 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["EBCOG"], "experience": ["18 χρόνια Μητέρα"], "publications": [] }
+  },
+  {
+    "email": "pulmo@medplatform.gr",
+    "profile": { "firstName": "Γεώργιος", "lastName": "Αντωνίου", "bio": "Πνευμονολόγος με εξειδίκευση στο άσθμα, COPD και αποφρακτική άπνοια ύπνου.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Pulmonology"], "subSpecialties": ["Asthma","COPD","Sleep Apnoea"],
+    "conditions": ["Asthma","COPD","Sleep Apnoea","Pulmonary Fibrosis","Bronchitis"],
+    "locations": [{ "clinicName": "Πνευμονολογικό Κέντρο", "address": "Μεσογείων 152", "city": "Αθήνα", "coords": { "lat": 37.9780, "lng": 23.7900 }, "phone": "2107710000" }],
+    "stats": { "totalPatients": 980, "avgRating": 4.7, "rebookRate": 76, "answerCount": 84 },
+    "cvData": { "education": ["Ιατρική Αθηνών","Fellowship Mayo Clinic"], "certifications": ["ERS"], "experience": ["13 χρόνια Σωτηρία"], "publications": [] }
+  },
+  {
+    "email": "gastro@medplatform.gr",
+    "profile": { "firstName": "Νίκη", "lastName": "Παπανικολάου", "bio": "Γαστρεντερολόγος. Ειδική σε ΙΦΝ, GERD και κολονοσκόπηση.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Gastroenterology"], "subSpecialties": ["IBD","Colonoscopy","GERD","Liver Disease"],
+    "conditions": ["Crohn's Disease","Ulcerative Colitis","GERD","IBS","Coeliac Disease","Fatty Liver"],
+    "locations": [{ "clinicName": "Γαστρεντερολογικό Κέντρο", "address": "Σταδίου 18", "city": "Αθήνα", "coords": { "lat": 37.9784, "lng": 23.7330 }, "phone": "2103231000" }],
+    "stats": { "totalPatients": 1340, "avgRating": 4.8, "rebookRate": 79, "answerCount": 107 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["ESGE"], "experience": ["11 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "urology@medplatform.gr",
+    "profile": { "firstName": "Παναγιώτης", "lastName": "Κατσίκης", "bio": "Ουρολόγος – Ανδρολόγος. Εξειδίκευση σε λαπαροσκοπική χειρουργική και καρκίνο προστάτη.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Urology"], "subSpecialties": ["Prostate Cancer","Kidney Stones","Andrology"],
+    "conditions": ["BPH","Prostate Cancer","Kidney Stones","Erectile Dysfunction","UTI"],
+    "locations": [{ "clinicName": "Ουρολογικό Κέντρο", "address": "Κηφισίας 44", "city": "Αθήνα", "coords": { "lat": 38.0050, "lng": 23.7750 }, "phone": "2106125000" }],
+    "stats": { "totalPatients": 870, "avgRating": 4.7, "rebookRate": 72, "answerCount": 61 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["EAU"], "experience": ["14 χρόνια Σισμανόγλειο"], "publications": [] }
+  },
+  {
+    "email": "rheum@medplatform.gr",
+    "profile": { "firstName": "Θεοδώρα", "lastName": "Κυριακίδου", "bio": "Ρευματολόγος. Εξειδίκευση σε ρευματοειδή αρθρίτιδα, λύκο και οστεοπόρωση.", "languages": ["el","en","de"], "title": "MD, PhD" },
+    "specialties": ["Rheumatology"], "subSpecialties": ["Rheumatoid Arthritis","Lupus","Osteoporosis"],
+    "conditions": ["Rheumatoid Arthritis","Lupus","Gout","Osteoporosis","Ankylosing Spondylitis","Fibromyalgia"],
+    "locations": [{ "clinicName": "Ρευματολογικό Κέντρο", "address": "Βασ. Σοφίας 45", "city": "Αθήνα", "coords": { "lat": 37.9760, "lng": 23.7490 }, "phone": "2107210000" }],
+    "stats": { "totalPatients": 640, "avgRating": 4.9, "rebookRate": 84, "answerCount": 93 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Βερολίνο"], "certifications": ["EULAR"], "experience": ["16 χρόνια ιδιωτική πρακτική"], "publications": ["Ann Rheum Dis 2021"] }
+  },
+  {
+    "email": "nephro@medplatform.gr",
+    "profile": { "firstName": "Στέφανος", "lastName": "Αλεξόπουλος", "bio": "Νεφρολόγος. Ειδικός σε χρόνια νεφρική νόσο, αιμοκάθαρση και νεφρική υπέρταση.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Nephrology"], "subSpecialties": ["CKD","Dialysis","Renal Hypertension"],
+    "conditions": ["Chronic Kidney Disease","Hypertension","Diabetic Nephropathy","Nephrotic Syndrome","Kidney Stones"],
+    "locations": [{ "clinicName": "Νεφρολογικό Κέντρο Αθηνών", "address": "Αλεξάνδρας 108", "city": "Αθήνα", "coords": { "lat": 37.9920, "lng": 23.7510 }, "phone": "2106458000" }],
+    "stats": { "totalPatients": 520, "avgRating": 4.8, "rebookRate": 83, "answerCount": 55 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["ERA-EDTA"], "experience": ["15 χρόνια Λαϊκό"], "publications": [] }
+  },
+  {
+    "email": "ent@medplatform.gr",
+    "profile": { "firstName": "Κυριάκος", "lastName": "Νικολαΐδης", "bio": "Ωτορινολαρυγγολόγος. Εξειδίκευση σε ρινοχειρουργική και διαταραχές ύπνου.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["ENT"], "subSpecialties": ["Rhinoplasty","Sleep Disorders","Hearing Loss"],
+    "conditions": ["Sinusitis","Tonsillitis","Hearing Loss","Sleep Apnoea","Nasal Polyps","Vertigo"],
+    "locations": [{ "clinicName": "ΩΡΛ Κέντρο Αθηνών", "address": "Ακαδημίας 32", "city": "Αθήνα", "coords": { "lat": 37.9800, "lng": 23.7380 }, "phone": "2103624000" }],
+    "stats": { "totalPatients": 1560, "avgRating": 4.7, "rebookRate": 75, "answerCount": 88 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["EAONO"], "experience": ["12 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "sports@medplatform.gr",
+    "profile": { "firstName": "Ανδρέας", "lastName": "Παπαγεωργίου", "bio": "Αθλητίατρος. Πρώην ομαδικός γιατρός Εθνικής. Ειδικός σε αθλητικά τραύματα.", "languages": ["el","en"], "title": "MD, MSc" },
+    "specialties": ["Sports Medicine"], "subSpecialties": ["Sports Injuries","Rehabilitation","Biomechanics"],
+    "conditions": ["ACL Injury","Meniscus Tear","Shoulder Impingement","Stress Fractures","Muscle Strains"],
+    "locations": [{ "clinicName": "Sports Medicine Center", "address": "Νέα Σμύρνη 5", "city": "Αθήνα", "coords": { "lat": 37.9400, "lng": 23.7200 }, "phone": "2109410000" }],
+    "stats": { "totalPatients": 1100, "avgRating": 4.8, "rebookRate": 81, "answerCount": 76 },
+    "cvData": { "education": ["Ιατρική Αθηνών","MSc Sports Medicine London"], "certifications": ["FIMS"], "experience": ["10 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "haem@medplatform.gr",
+    "profile": { "firstName": "Ευαγγελία", "lastName": "Δημητρίου", "bio": "Αιματολόγος. Εξειδίκευση σε αναιμίες, λεμφώματα και διαταραχές πήξης.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Haematology"], "subSpecialties": ["Anaemia","Lymphoma","Coagulation Disorders"],
+    "conditions": ["Iron Deficiency Anaemia","Thalassaemia","Lymphoma","Leukaemia","Thrombocytopenia","DVT"],
+    "locations": [{ "clinicName": "Αιματολογικό Κέντρο", "address": "Λεωφ. Αθηνών 62", "city": "Αθήνα", "coords": { "lat": 37.9890, "lng": 23.7100 }, "phone": "2105140000" }],
+    "stats": { "totalPatients": 480, "avgRating": 4.9, "rebookRate": 86, "answerCount": 49 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Παρίσι"], "certifications": ["EHA"], "experience": ["18 χρόνια Λαϊκό"], "publications": ["Blood 2020"] }
+  },
+  {
+    "email": "cardio2@medplatform.gr",
+    "profile": { "firstName": "Σπυρίδων", "lastName": "Λεωνίδας", "bio": "Καρδιολόγος – Αρρυθμιολόγος. Ειδικός σε εμφύτευση βηματοδοτών και ablation.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Cardiology"], "subSpecialties": ["Electrophysiology","Pacemakers","Ablation"],
+    "conditions": ["Atrial Fibrillation","SVT","Heart Block","Syncope","Ventricular Tachycardia"],
+    "locations": [{ "clinicName": "Ευρωκλινική Αθηνών", "address": "Λεωφ. Κηφισίας 9", "city": "Αθήνα", "coords": { "lat": 38.0000, "lng": 23.7700 }, "phone": "2106946000" }],
+    "stats": { "totalPatients": 720, "avgRating": 4.8, "rebookRate": 82, "answerCount": 63 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","Fellowship EP Boston"], "certifications": ["EHRA"], "experience": ["12 χρόνια Ευρωκλινική"], "publications": [] }
+  },
+  {
+    "email": "gp2@medplatform.gr",
+    "profile": { "firstName": "Χριστίνα", "lastName": "Ζαχαρίου", "bio": "Γενικός Ιατρός με έμφαση στην προληπτική ιατρική και τη διαχείριση χρόνιων νοσημάτων.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["General Practice"], "subSpecialties": ["Preventive Medicine","Chronic Disease Management"],
+    "conditions": ["Hypertension","Diabetes","Dyslipidaemia","Obesity","Anxiety","GERD"],
+    "locations": [{ "clinicName": "Ιατρείο Ζαχαρίου", "address": "Πατησίων 88", "city": "Αθήνα", "coords": { "lat": 37.9960, "lng": 23.7290 }, "phone": "2108237000" }],
+    "stats": { "totalPatients": 3100, "avgRating": 4.7, "rebookRate": 73, "answerCount": 241 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["WONCA"], "experience": ["20 χρόνια πρωτοβάθμια φροντίδα"], "publications": [] }
+  },
+  {
+    "email": "cardio3@medplatform.gr",
+    "profile": { "firstName": "Θεόδωρος", "lastName": "Μαυρογιάννης", "bio": "Καρδιολόγος – Ιατρός Εντατικής. Εξειδίκευση στην οξεία καρδιολογία και τη θρομβολυτική θεραπεία.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Cardiology"], "subSpecialties": ["Acute Cardiology","Interventional Cardiology","Coronary Stenting"],
+    "conditions": ["Myocardial Infarction","Unstable Angina","Cardiogenic Shock","Pulmonary Embolism"],
+    "locations": [{ "clinicName": "Ευαγγελισμός Νοσοκομείο", "address": "Υψηλάντου 45", "city": "Αθήνα", "coords": { "lat": 37.9770, "lng": 23.7540 }, "phone": "2107201000" }],
+    "stats": { "totalPatients": 930, "avgRating": 4.8, "rebookRate": 80, "answerCount": 72 },
+    "cvData": { "education": ["Ιατρική Αθηνών","Fellowship Interventional Cardiology Paris"], "certifications": ["FESC"], "experience": ["14 χρόνια Ευαγγελισμός"], "publications": ["EHJ 2020"] }
+  },
+  {
+    "email": "ortho2@medplatform.gr",
+    "profile": { "firstName": "Νικόλαος", "lastName": "Σαρρής", "bio": "Ορθοπεδικός. Εξειδίκευση σε αρθροσκοπική χειρουργική και τραύματα αθλητών.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Orthopaedics"], "subSpecialties": ["Arthroscopy","ACL Reconstruction","Shoulder Surgery"],
+    "conditions": ["ACL Rupture","Meniscus Tear","Rotator Cuff","Shoulder Dislocation","Cartilage Injury"],
+    "locations": [{ "clinicName": "Ορθοπεδικό Κέντρο Αθηνών", "address": "Κηφισίας 80", "city": "Αθήνα", "coords": { "lat": 38.0200, "lng": 23.7810 }, "phone": "2106821000" }],
+    "stats": { "totalPatients": 760, "avgRating": 4.8, "rebookRate": 79, "answerCount": 58 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","Fellowship Arthroscopy Rome"], "certifications": ["ESSKA"], "experience": ["11 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "neuro2@medplatform.gr",
+    "profile": { "firstName": "Ειρήνη", "lastName": "Χατζηδημητρίου", "bio": "Νευρολόγος ειδικευμένη σε σκλήρυνση κατά πλάκας, νευρομυϊκά νοσήματα και νευρο-εντατική.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Neurology"], "subSpecialties": ["Multiple Sclerosis","Neuromuscular","Stroke"],
+    "conditions": ["Multiple Sclerosis","ALS","Myasthenia Gravis","GBS","Stroke"],
+    "locations": [{ "clinicName": "Νευρολογικό Θεσσαλονίκης", "address": "Τσιμισκή 92", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6350, "lng": 22.9440 }, "phone": "2310252000" }],
+    "stats": { "totalPatients": 580, "avgRating": 4.9, "rebookRate": 89, "answerCount": 71 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","PhD Βιέννη"], "certifications": ["ECTRIMS"], "experience": ["13 χρόνια ΑΧΕΠΑ"], "publications": ["MSARD 2022"] }
+  },
+  {
+    "email": "psych2@medplatform.gr",
+    "profile": { "firstName": "Κωνσταντίνος", "lastName": "Αργυρόπουλος", "bio": "Ψυχίατρος – Ψυχοθεραπευτής. Εξειδίκευση σε τραύμα, PTSD και εθισμούς.", "languages": ["el","en"], "title": "MD, MSc" },
+    "specialties": ["Psychiatry"], "subSpecialties": ["PTSD","Addiction","Trauma-Informed Therapy"],
+    "conditions": ["PTSD","Addiction","Complex Trauma","Borderline PD","Depression"],
+    "locations": [{ "clinicName": "Κέντρο Ψυχικής Υγείας", "address": "Σόλωνος 34", "city": "Αθήνα", "coords": { "lat": 37.9820, "lng": 23.7350 }, "phone": "2103604000" }],
+    "stats": { "totalPatients": 390, "avgRating": 4.9, "rebookRate": 92, "answerCount": 54 },
+    "cvData": { "education": ["Ιατρική Αθηνών","MSc Trauma Therapy"], "certifications": ["EMDR Certified"], "experience": ["12 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "endo2@medplatform.gr",
+    "profile": { "firstName": "Ζωή", "lastName": "Παπαδημητρίου", "bio": "Ενδοκρινολόγος ειδικευμένη στις παθήσεις επινεφριδίων, υπόφυσης και οστεοπόρωσης.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Endocrinology"], "subSpecialties": ["Adrenal Disorders","Pituitary","Osteoporosis"],
+    "conditions": ["Cushing's Syndrome","Addison's Disease","Acromegaly","Prolactinoma","Osteoporosis"],
+    "locations": [{ "clinicName": "Ενδοκρινολογικό Κέντρο", "address": "Βασ. Γεωργίου 15", "city": "Αθήνα", "coords": { "lat": 37.9750, "lng": 23.7450 }, "phone": "2107215000" }],
+    "stats": { "totalPatients": 680, "avgRating": 4.8, "rebookRate": 83, "answerCount": 87 },
+    "cvData": { "education": ["Ιατρική Αθηνών"], "certifications": ["ENEA"], "experience": ["12 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "gyn2@medplatform.gr",
+    "profile": { "firstName": "Μαρία", "lastName": "Αλεξανδρίδου", "bio": "Γυναικολόγος Ογκολόγος. Εξειδίκευση σε καρκίνο τράχηλου, ωοθηκών και ενδομητρίου.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Gynaecology"], "subSpecialties": ["Gynaecological Oncology","Colposcopy","Hysteroscopy"],
+    "conditions": ["Cervical Cancer","Ovarian Cancer","Endometrial Cancer","HPV","CIN"],
+    "locations": [{ "clinicName": "Ογκολογικό Κέντρο Αθηνών", "address": "Λεωφ. Βουλιαγμένης 54", "city": "Αθήνα", "coords": { "lat": 37.9500, "lng": 23.7300 }, "phone": "2109231000" }],
+    "stats": { "totalPatients": 740, "avgRating": 4.9, "rebookRate": 86, "answerCount": 65 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Γυναικολογική Ογκολογία"], "certifications": ["ESGO"], "experience": ["15 χρόνια ΜΗΤΕΡΑ"], "publications": ["Gynecol Oncol 2021"] }
+  },
+  {
+    "email": "pulmo2@medplatform.gr",
+    "profile": { "firstName": "Βασίλης", "lastName": "Χριστόπουλος", "bio": "Πνευμονολόγος. Εξειδίκευση σε διαγνωστική βρογχοσκόπηση, θεραπεία πνευμονίας και καρκίνο πνεύμονα.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Pulmonology"], "subSpecialties": ["Bronchoscopy","Lung Cancer","Interstitial Lung Disease"],
+    "conditions": ["Lung Cancer","Pneumonia","Sarcoidosis","Pulmonary Fibrosis","Pleural Effusion"],
+    "locations": [{ "clinicName": "Σωτηρία Νοσοκομείο", "address": "Μεσογείων 152", "city": "Αθήνα", "coords": { "lat": 37.9780, "lng": 23.7890 }, "phone": "2107706000" }],
+    "stats": { "totalPatients": 620, "avgRating": 4.7, "rebookRate": 74, "answerCount": 62 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["ERS"], "experience": ["14 χρόνια Σωτηρία"], "publications": [] }
+  },
+  {
+    "email": "gastro2@medplatform.gr",
+    "profile": { "firstName": "Αθανάσιος", "lastName": "Βλάχος", "bio": "Γαστρεντερολόγος – Ηπατολόγος. Εξειδίκευση σε ηπατίτιδα C, κίρρωση και μεταμόσχευση ήπατος.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Gastroenterology"], "subSpecialties": ["Hepatology","Liver Transplant","Hepatitis C"],
+    "conditions": ["Hepatitis C","Hepatitis B","Cirrhosis","Non-Alcoholic Fatty Liver","Liver Cancer"],
+    "locations": [{ "clinicName": "Ηπατολογικό Κέντρο Αθηνών", "address": "Λεωφ. Συγγρού 180", "city": "Αθήνα", "coords": { "lat": 37.9500, "lng": 23.7150 }, "phone": "2109215000" }],
+    "stats": { "totalPatients": 890, "avgRating": 4.8, "rebookRate": 81, "answerCount": 95 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Ηπατολογία Παρίσι"], "certifications": ["EASL"], "experience": ["16 χρόνια ιδιωτική πρακτική"], "publications": ["Hepatology 2020"] }
+  },
+  {
+    "email": "urology2@medplatform.gr",
+    "profile": { "firstName": "Γρηγόριος", "lastName": "Τσαλίκης", "bio": "Ουρολόγος. Ειδικός σε ρομποτική χειρουργική, νεφρολιθίαση και νευρογενή κύστη.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Urology"], "subSpecialties": ["Robotic Surgery","Nephrolithiasis","Neurogenic Bladder"],
+    "conditions": ["Kidney Stones","Bladder Cancer","Neurogenic Bladder","Overactive Bladder","Hydronephrosis"],
+    "locations": [{ "clinicName": "Ουρολογικό Κέντρο Θεσσαλονίκης", "address": "Εγνατία 102", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6380, "lng": 22.9460 }, "phone": "2310231000" }],
+    "stats": { "totalPatients": 650, "avgRating": 4.7, "rebookRate": 71, "answerCount": 47 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","Fellowship Robotic Surgery Amsterdam"], "certifications": ["EAU"], "experience": ["11 χρόνια ΑΧΕΠΑ"], "publications": [] }
+  },
+  {
+    "email": "rheum2@medplatform.gr",
+    "profile": { "firstName": "Παρασκευή", "lastName": "Νικολάου", "bio": "Ρευματολόγος. Εξειδίκευση σε βιολογικές θεραπείες για ψωριασική αρθρίτιδα και αγκυλοποιητική σπονδυλίτιδα.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Rheumatology"], "subSpecialties": ["Psoriatic Arthritis","Ankylosing Spondylitis","Biologics"],
+    "conditions": ["Psoriatic Arthritis","Ankylosing Spondylitis","Reactive Arthritis","Sjögren's Syndrome"],
+    "locations": [{ "clinicName": "Ρευματολογικό Θεσσαλονίκης", "address": "Δελφών 10", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6310, "lng": 22.9410 }, "phone": "2310267000" }],
+    "stats": { "totalPatients": 490, "avgRating": 4.8, "rebookRate": 82, "answerCount": 61 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["EULAR"], "experience": ["13 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "nephro2@medplatform.gr",
+    "profile": { "firstName": "Δήμητρα", "lastName": "Οικονόμου", "bio": "Νεφρολόγος ειδικευμένη σε μεταμόσχευση νεφρού και γλωμερουλοπάθειες.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Nephrology"], "subSpecialties": ["Renal Transplant","Glomerulopathies","Peritoneal Dialysis"],
+    "conditions": ["IgA Nephropathy","Membranous Nephropathy","FSGS","Polycystic Kidney","Renal Transplant"],
+    "locations": [{ "clinicName": "Νεφρολογικό ΑΧΕΠΑ", "address": "Στ. Κυριακίδη 1", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6420, "lng": 22.9540 }, "phone": "2310994000" }],
+    "stats": { "totalPatients": 380, "avgRating": 4.9, "rebookRate": 87, "answerCount": 42 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","PhD Νεφρολογία"], "certifications": ["ERA-EDTA"], "experience": ["14 χρόνια ΑΧΕΠΑ"], "publications": ["NDT 2021"] }
+  },
+  {
+    "email": "ent2@medplatform.gr",
+    "profile": { "firstName": "Ευστάθιος", "lastName": "Μακρής", "bio": "ΩΡΛ Χειρουργός. Εξειδίκευση σε ακοολογία, κοχλιακά εμφυτεύματα και χειρουργική ροχαλητού.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["ENT"], "subSpecialties": ["Cochlear Implants","Audiology","Snoring Surgery"],
+    "conditions": ["Hearing Loss","Tinnitus","Otosclerosis","Chronic Sinusitis","Vocal Cord Disorders"],
+    "locations": [{ "clinicName": "ΩΡΛ Θεσσαλονίκης", "address": "Μ. Αλεξάνδρου 28", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6370, "lng": 22.9480 }, "phone": "2310278000" }],
+    "stats": { "totalPatients": 1120, "avgRating": 4.7, "rebookRate": 76, "answerCount": 69 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ","Fellowship Audiology Vienna"], "certifications": ["EUFOS"], "experience": ["13 χρόνια ΑΧΕΠΑ"], "publications": [] }
+  },
+  {
+    "email": "sports2@medplatform.gr",
+    "profile": { "firstName": "Κλεάνθης", "lastName": "Φωτίου", "bio": "Αθλητίατρος και Φυσίατρος. Εξειδίκευση σε αποκατάσταση μετά χειρουργείο και αθλητική φυσιοθεραπεία.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Sports Medicine"], "subSpecialties": ["Rehabilitation","PRP Therapy","Ultrasound-guided Injections"],
+    "conditions": ["Post-surgical Rehab","Tendinopathy","Overuse Injuries","Plantar Fasciitis","Golfer's Elbow"],
+    "locations": [{ "clinicName": "Κέντρο Αποκατάστασης Αθηνών", "address": "Λ. Βουλιαγμένης 120", "city": "Αθήνα", "coords": { "lat": 37.9350, "lng": 23.7250 }, "phone": "2109441000" }],
+    "stats": { "totalPatients": 870, "avgRating": 4.8, "rebookRate": 80, "answerCount": 58 },
+    "cvData": { "education": ["Ιατρική Αθηνών","MSc Physical Medicine"], "certifications": ["ESPRM"], "experience": ["10 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "haem2@medplatform.gr",
+    "profile": { "firstName": "Αντώνης", "lastName": "Σπανός", "bio": "Αιματολόγος – Ογκολόγος. Εξειδίκευση σε μυελώματα, λεμφώματα και θεραπεία με CAR-T.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Haematology"], "subSpecialties": ["Multiple Myeloma","Lymphoma","Bone Marrow Transplant"],
+    "conditions": ["Multiple Myeloma","Hodgkin Lymphoma","Non-Hodgkin Lymphoma","CLL","CML"],
+    "locations": [{ "clinicName": "Ογκοαιματολογικό Κέντρο", "address": "Λεωφ. Αλεξάνδρας 44", "city": "Αθήνα", "coords": { "lat": 37.9880, "lng": 23.7460 }, "phone": "2106453000" }],
+    "stats": { "totalPatients": 310, "avgRating": 4.9, "rebookRate": 88, "answerCount": 36 },
+    "cvData": { "education": ["Ιατρική Αθηνών","Fellowship BMT Houston"], "certifications": ["EHA"], "experience": ["15 χρόνια Αλεξάνδρα Νοσοκομείο"], "publications": ["Leukemia 2021","Blood 2023"] }
+  },
+  {
+    "email": "derm2@medplatform.gr",
+    "profile": { "firstName": "Σταύρος", "lastName": "Κοντός", "bio": "Δερματολόγος. Εξειδίκευση σε αλλεργική δερματολογία, φλεβολογία και αισθητική ιατρική.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Dermatology"], "subSpecialties": ["Allergic Dermatology","Phlebology","Aesthetic Medicine"],
+    "conditions": ["Contact Dermatitis","Urticaria","Varicose Veins","Alopecia","Keloid Scars"],
+    "locations": [{ "clinicName": "DermCenter Θεσσαλονίκη", "address": "Αριστοτέλους 5", "city": "Θεσσαλονίκη", "coords": { "lat": 40.6360, "lng": 22.9360 }, "phone": "2310242000" }],
+    "stats": { "totalPatients": 1680, "avgRating": 4.7, "rebookRate": 80, "answerCount": 112 },
+    "cvData": { "education": ["Ιατρική ΑΠΘ"], "certifications": ["EADV"], "experience": ["11 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "paed2@medplatform.gr",
+    "profile": { "firstName": "Χαρούλα", "lastName": "Μπέκα", "bio": "Παιδίατρος – Αλλεργιολόγος. Εξειδίκευση σε παιδικές αλλεργίες, άσθμα και ανοσοθεραπεία.", "languages": ["el","en"], "title": "MD, PhD" },
+    "specialties": ["Paediatrics"], "subSpecialties": ["Paediatric Allergy","Paediatric Asthma","Immunotherapy"],
+    "conditions": ["Food Allergy","Asthma","Allergic Rhinitis","Atopic Dermatitis","Anaphylaxis"],
+    "locations": [{ "clinicName": "Παιδιατρικό Αλλεργιολογικό Κέντρο", "address": "Λεωφ. Δημοκρατίας 12", "city": "Αθήνα", "coords": { "lat": 37.9870, "lng": 23.7180 }, "phone": "2105150000" }],
+    "stats": { "totalPatients": 2100, "avgRating": 4.9, "rebookRate": 91, "answerCount": 148 },
+    "cvData": { "education": ["Ιατρική Αθηνών","PhD Παιδιατρική Αλλεργιολογία"], "certifications": ["EAACI"], "experience": ["14 χρόνια Αγία Σοφία"], "publications": ["Pediatr Allergy 2022"] }
+  },
+  {
+    "email": "ophth2@medplatform.gr",
+    "profile": { "firstName": "Κωνσταντίνος", "lastName": "Τριανταφύλλου", "bio": "Οφθαλμίατρος ειδικευμένος σε αμφιβληστροειδή, ωχρά κηλίδα και ενδοφθάλμιες ενέσεις.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Ophthalmology"], "subSpecialties": ["Retinal Surgery","Macular Degeneration","Intravitreal Injections"],
+    "conditions": ["Macular Degeneration","Diabetic Retinopathy","Retinal Detachment","Vitreous Haemorrhage"],
+    "locations": [{ "clinicName": "Αμφιβληστροειδολογικό Κέντρο", "address": "Κηφισίας 200", "city": "Αθήνα", "coords": { "lat": 38.0200, "lng": 23.7920 }, "phone": "2106897000" }],
+    "stats": { "totalPatients": 940, "avgRating": 4.8, "rebookRate": 84, "answerCount": 52 },
+    "cvData": { "education": ["Ιατρική Αθηνών","Fellowship Retinal Surgery Moorfields"], "certifications": ["EURETINA"], "experience": ["12 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "gp3@medplatform.gr",
+    "profile": { "firstName": "Σωτήριος", "lastName": "Μαντάς", "bio": "Γενικός Ιατρός. Ειδικός σε ταξιδιωτική ιατρική, εμβολιασμούς και ιατρικές εξετάσεις εργαζομένων.", "languages": ["el","en","it"], "title": "MD" },
+    "specialties": ["General Practice"], "subSpecialties": ["Travel Medicine","Occupational Health","Vaccines"],
+    "conditions": ["Travel Diseases","Work-related Conditions","Preventive Care","Hypertension","Diabetes"],
+    "locations": [{ "clinicName": "Ιατρείο Μαντά", "address": "Σταδίου 38", "city": "Αθήνα", "coords": { "lat": 37.9790, "lng": 23.7310 }, "phone": "2103222000" }],
+    "stats": { "totalPatients": 2800, "avgRating": 4.6, "rebookRate": 68, "answerCount": 198 },
+    "cvData": { "education": ["Ιατρική Αθηνών","MSc Travel Medicine"], "certifications": ["ISTM"], "experience": ["18 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  },
+  {
+    "email": "cardio4@medplatform.gr",
+    "profile": { "firstName": "Αγγελική", "lastName": "Σωτηριάδου", "bio": "Καρδιολόγος με εξειδίκευση στην καρδιολογία γυναίκας, εγκυμοσύνη και καρδιαγγειακή πρόληψη.", "languages": ["el","en"], "title": "MD" },
+    "specialties": ["Cardiology"], "subSpecialties": ["Women's Cardiology","Pregnancy and Heart","Prevention"],
+    "conditions": ["Hypertension in Pregnancy","Peripartum Cardiomyopathy","Atrial Fibrillation","Risk Factor Management"],
+    "locations": [{ "clinicName": "Καρδιολογικό Κέντρο Γυναίκας", "address": "Λεωφ. Αμαλίας 26", "city": "Αθήνα", "coords": { "lat": 37.9730, "lng": 23.7350 }, "phone": "2103210000" }],
+    "stats": { "totalPatients": 830, "avgRating": 4.8, "rebookRate": 83, "answerCount": 77 },
+    "cvData": { "education": ["Ιατρική Αθηνών","Fellowship Women's Cardiology Stockholm"], "certifications": ["FESC"], "experience": ["11 χρόνια ιδιωτική πρακτική"], "publications": [] }
+  }
+]

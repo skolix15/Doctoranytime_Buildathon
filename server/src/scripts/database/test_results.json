@@ -1,0 +1,192 @@
+[
+  {
+    "_patientEmail": "patient@test.com",
+    "testDateDaysAgo": 14,
+    "labName": "Βιοιατρική Αθηνών",
+    "testType": "blood",
+    "values": [
+      { "name": "Γλυκόζη νηστείας", "value": "108", "unit": "mg/dL", "referenceRange": "70-99", "status": "high", "aiExplanation": "Ελαφρά αυξημένη. Εντός prediabetes εύρους (100-125). Η έναρξη μετφορμίνης θα βοηθήσει." },
+      { "name": "HbA1c", "value": "5.9", "unit": "%", "referenceRange": "<5.7", "status": "high", "aiExplanation": "Prediabetes εύρος 5.7-6.4%. Αντικατοπτρίζει μέση γλυκόζη 3 μηνών. Στόχος <5.7% με αλλαγές ΤΖ." },
+      { "name": "LDL Χοληστερίνη", "value": "102", "unit": "mg/dL", "referenceRange": "<100", "status": "high", "aiExplanation": "Οριακά αυξημένη. Ελέγχεται με ατορβαστατίνη — βελτίωση από 118 mg/dL." },
+      { "name": "HDL Χοληστερίνη", "value": "55", "unit": "mg/dL", "referenceRange": ">40", "status": "normal", "aiExplanation": "Φυσιολογικό. Καλή χοληστερίνη σε επαρκή επίπεδα." },
+      { "name": "Τριγλυκερίδια", "value": "138", "unit": "mg/dL", "referenceRange": "<150", "status": "normal", "aiExplanation": "Εντός φυσιολογικών ορίων. Βελτίωση με ωμέγα-3 συμπλήρωμα." },
+      { "name": "Κρεατινίνη", "value": "0.9", "unit": "mg/dL", "referenceRange": "0.7-1.2", "status": "normal", "aiExplanation": "Φυσιολογική νεφρική λειτουργία." },
+      { "name": "ALT (SGPT)", "value": "28", "unit": "U/L", "referenceRange": "7-56", "status": "normal", "aiExplanation": "Ηπατική λειτουργία φυσιολογική. Ατορβαστατίνη καλά ανεκτή." },
+      { "name": "TSH", "value": "2.1", "unit": "mIU/L", "referenceRange": "0.4-4.0", "status": "normal", "aiExplanation": "Θυρεοειδής φυσιολογικός." },
+      { "name": "Αιμοσφαιρίνη", "value": "14.8", "unit": "g/dL", "referenceRange": "13.5-17.5", "status": "normal", "aiExplanation": "Φυσιολογική. Αναιμία αποκαταστάθηκε με σιδηρο-συμπλήρωμα." },
+      { "name": "Φερριτίνη", "value": "45", "unit": "ng/mL", "referenceRange": "12-300", "status": "normal", "aiExplanation": "Αποθέματα σιδήρου αποκαταστάθηκαν πλήρως από 8 ng/mL." }
+    ],
+    "aiSummary": "Σημαντική βελτίωση σε σχέση με τον προηγούμενο έλεγχο. Αναιμία αποκαταστάθηκε πλήρως. Γλυκόζη και χοληστερίνη εντός prediabetes/οριακών επιπέδων — συνιστάται συνέχιση αγωγής και παρακολούθηση σε 3 μήνες."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "testDateDaysAgo": 90,
+    "labName": "Βιοιατρική Αθηνών",
+    "testType": "blood",
+    "values": [
+      { "name": "Γλυκόζη νηστείας", "value": "112", "unit": "mg/dL", "referenceRange": "70-99", "status": "high", "aiExplanation": "Αυξημένη στο prediabetes εύρος. Διατροφική παρέμβαση συνιστάται." },
+      { "name": "HbA1c", "value": "5.9", "unit": "%", "referenceRange": "<5.7", "status": "high", "aiExplanation": "Σταθερό prediabetes — χωρίς επιδείνωση από τελευταίο check-up." },
+      { "name": "LDL Χοληστερίνη", "value": "118", "unit": "mg/dL", "referenceRange": "<100", "status": "high", "aiExplanation": "Αυξημένη παρά στατίνη. Αύξηση δόσης ή αλλαγή σε πιο ισχυρή στατίνη εξετάζεται." },
+      { "name": "Αιμοσφαιρίνη", "value": "12.1", "unit": "g/dL", "referenceRange": "13.5-17.5", "status": "low", "aiExplanation": "Αναιμία σε βελτίωση από 11.2 g/dL." },
+      { "name": "Φερριτίνη", "value": "22", "unit": "ng/mL", "referenceRange": "12-300", "status": "normal", "aiExplanation": "Αποθέματα σιδήρου αποκαθίστανται σταδιακά." }
+    ],
+    "aiSummary": "Prediabetes σταθερό. Αναιμία σε βελτίωση με σιδηροθεραπεία. LDL άνω του στόχου — εξετάζεται αύξηση ατορβαστατίνης."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "testDateDaysAgo": 200,
+    "labName": "Synlab Hellas",
+    "testType": "blood",
+    "values": [
+      { "name": "Σίδηρος ορού", "value": "58", "unit": "μg/dL", "referenceRange": "60-170", "status": "low", "aiExplanation": "Χαμηλός σίδηρος, συμβατός με σιδηροπενική αναιμία." },
+      { "name": "Φερριτίνη", "value": "8", "unit": "ng/mL", "referenceRange": "12-300", "status": "low", "aiExplanation": "Εξαιρετικά χαμηλή. Εξαντλημένα αποθέματα σιδήρου." },
+      { "name": "Αιμοσφαιρίνη", "value": "11.2", "unit": "g/dL", "referenceRange": "13.5-17.5", "status": "low", "aiExplanation": "Μέτρια αναιμία. Εξηγεί κόπωση και αδυναμία." },
+      { "name": "MCV", "value": "72", "unit": "fL", "referenceRange": "80-100", "status": "low", "aiExplanation": "Μικροκυτταρική αναιμία — χαρακτηριστικό σιδηροπενίας." }
+    ],
+    "aiSummary": "Σαφής εικόνα σιδηροπενικής αναιμίας. Πιθανή αιτία: χρόνια ανεπαρκής πρόσληψη σιδήρου. Συνιστάται έναρξη θεραπείας και διερεύνηση αιτίας."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "testDateDaysAgo": 300,
+    "labName": "Βιοιατρική Αθηνών",
+    "testType": "blood",
+    "values": [
+      { "name": "Γλυκόζη νηστείας", "value": "108", "unit": "mg/dL", "referenceRange": "70-99", "status": "high", "aiExplanation": "Prediabetes. Σύσταση ενδοκρινολόγου." },
+      { "name": "Ολική Χοληστερίνη", "value": "225", "unit": "mg/dL", "referenceRange": "<200", "status": "high", "aiExplanation": "Αυξημένη. Δυσλιπιδαιμία — ξεκίνησε στατίνη μετά." },
+      { "name": "LDL", "value": "145", "unit": "mg/dL", "referenceRange": "<100", "status": "high", "aiExplanation": "Σημαντικά αυξημένη LDL. Αρχική μέτρηση πριν θεραπεία." },
+      { "name": "Αρτηριακή Πίεση (καταγεγραμμένη)", "value": "165/105", "unit": "mmHg", "referenceRange": "<130/80", "status": "high", "aiExplanation": "Υπέρταση stage 2 ανακαλύφθηκε τυχαία — ξεκίνησε Amlodipine." }
+    ],
+    "aiSummary": "Αρχικές μετρήσεις που οδήγησαν σε διάγνωση υπέρτασης και δυσλιπιδαιμίας. Σημαντική βελτίωση μετά από 3 μήνες θεραπείας."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "testDateDaysAgo": 45,
+    "labName": "Αλφα Μικροβιολογικό",
+    "testType": "other",
+    "values": [
+      { "name": "ΗΚΓ (Ερμηνεία)", "value": "Φυσιολογικό", "unit": "", "referenceRange": "Φυσιολογικό", "status": "normal", "aiExplanation": "Φυσιολογικός ρυθμός 72 bpm. Χωρίς αρρυθμία ή ισχαιμικές αλλοιώσεις." },
+      { "name": "Σπιρομέτρηση FEV1", "value": "92", "unit": "%", "referenceRange": ">80%", "status": "normal", "aiExplanation": "Φυσιολογική πνευμονική λειτουργία." }
+    ],
+    "aiSummary": "Καρδιολογικός και πνευμονολογικός έλεγχος φυσιολογικός. Κανένα εύρημα που να απαιτεί περαιτέρω διερεύνηση."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "testDateDaysAgo": 60,
+    "labName": "ΙΑΣΩ Θεσσαλονίκης",
+    "testType": "blood",
+    "values": [
+      { "name": "Τεστοστερόνη ολική", "value": "72", "unit": "ng/dL", "referenceRange": "15-70", "status": "high", "aiExplanation": "Ελαφρά αυξημένη τεστοστερόνη — χαρακτηριστικό PCOS. Εξηγεί ακμή και ελαφρό τριχωτισμό." },
+      { "name": "DHEA-S", "value": "285", "unit": "μg/dL", "referenceRange": "35-430", "status": "normal", "aiExplanation": "Φυσιολογικό. Δεν υποδηλώνει αδρενικής αιτιολογίας υπερανδρογοναιμία." },
+      { "name": "Γλυκόζη νηστείας", "value": "94", "unit": "mg/dL", "referenceRange": "70-99", "status": "normal", "aiExplanation": "Φυσιολογική. PCOS δεν έχει επηρεάσει ακόμα την ανοχή γλυκόζης." },
+      { "name": "Ινσουλίνη νηστείας", "value": "14", "unit": "μU/mL", "referenceRange": "2-25", "status": "normal", "aiExplanation": "Οριακά αυξημένη ινσουλίνη — ήπια αντίσταση. Δείχνει ανάγκη για άσκηση και δίαιτα." },
+      { "name": "LH/FSH ratio", "value": "2.8", "unit": "", "referenceRange": "<2.5", "status": "high", "aiExplanation": "Αυξημένος λόγος LH/FSH — συνεπής με PCOS. Ένδειξη ανώμαλης ωοθηκικής λειτουργίας." },
+      { "name": "TSH", "value": "1.8", "unit": "mIU/L", "referenceRange": "0.4-4.0", "status": "normal", "aiExplanation": "Θυρεοειδής φυσιολογικός — αποκλεισμός υποθυρεοειδισμού." },
+      { "name": "Αιμοσφαιρίνη", "value": "12.8", "unit": "g/dL", "referenceRange": "12.0-16.0", "status": "normal", "aiExplanation": "Φυσιολογική για γυναίκα. Χωρίς αναιμία." }
+    ],
+    "aiSummary": "Εικόνα συνεπής με PCOS: ελαφρά υπερανδρογοναιμία, αυξημένος LH/FSH, ήπια αντίσταση στην ινσουλίνη. Γλυκαιμικός έλεγχος ακόμα φυσιολογικός. Συνιστάται inositol, άσκηση και παρακολούθηση."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "testDateDaysAgo": 150,
+    "labName": "Βιοανάλυση ΑΕ",
+    "testType": "blood",
+    "values": [
+      { "name": "Βιταμίνη D (25-OH)", "value": "18", "unit": "ng/mL", "referenceRange": "30-100", "status": "low", "aiExplanation": "Ανεπάρκεια βιταμίνης D — πολύ συνηθισμένο σε PCOS. Συμβάλλει σε κόπωση και αλλαγές διάθεσης." },
+      { "name": "Βιταμίνη Β12", "value": "245", "unit": "pg/mL", "referenceRange": "200-900", "status": "normal", "aiExplanation": "Φυσιολογική. Χωρίς ανεπάρκεια Β12." },
+      { "name": "Ψευδάργυρος (Zn)", "value": "68", "unit": "μg/dL", "referenceRange": "70-120", "status": "low", "aiExplanation": "Ελαφρά χαμηλός ψευδάργυρος. Συμβάλλει στην ακμή και ανοσολογική αδυναμία." },
+      { "name": "Φερριτίνη", "value": "14", "unit": "ng/mL", "referenceRange": "12-150", "status": "normal", "aiExplanation": "Φυσιολογικά αποθέματα σιδήρου. Οριακά αλλά εντός φυσιολογικών." },
+      { "name": "CRP", "value": "3.2", "unit": "mg/L", "referenceRange": "<3.0", "status": "high", "aiExplanation": "Ελαφρά αυξημένο CRP — χαμηλόβαθμη φλεγμονή συνεπής με PCOS. Omega-3 και άσκηση βοηθούν." }
+    ],
+    "aiSummary": "Ανεπάρκεια Βιταμίνης D και ελαφρά χαμηλός Zn — ξεκίνησαν συμπληρώματα. Χαμηλόβαθμη φλεγμονή (CRP) συνεπής με PCOS. Ακολουθία παρακολούθησης σε 3 μήνες."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "testDateDaysAgo": 10,
+    "labName": "ΙΑΣΩ Θεσσαλονίκης",
+    "testType": "other",
+    "values": [
+      { "name": "Υπερηχογράφημα Ωοθηκών", "value": "Πολυκυστικές ωοθήκες", "unit": "", "referenceRange": "Φυσιολογικό", "status": "high", "aiExplanation": ">12 μικρές κύστεις ανά ωοθήκη — τυπική εικόνα PCOS. Δεν απαιτεί χειρουργείο." },
+      { "name": "Ενδομητρική γραμμή", "value": "7mm", "unit": "", "referenceRange": "4-14mm (ωοθυλακική φάση)", "status": "normal", "aiExplanation": "Φυσιολογική ενδομήτρια γραμμή." }
+    ],
+    "aiSummary": "Υπερηχογραφικά ευρήματα PCOS επιβεβαιωμένα. Ενδομήτριο φυσιολογικό. Pap test σχεδιάζεται σε επόμενη επίσκεψη."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "testDateDaysAgo": 200,
+    "labName": "Αλφα Lab",
+    "testType": "blood",
+    "values": [
+      { "name": "Γενική Αίματος (Hb)", "value": "12.9", "unit": "g/dL", "referenceRange": "12.0-16.0", "status": "normal", "aiExplanation": "Φυσιολογική αιμοσφαιρίνη." },
+      { "name": "Γλυκόζη", "value": "91", "unit": "mg/dL", "referenceRange": "70-99", "status": "normal", "aiExplanation": "Φυσιολογική γλυκόζη." },
+      { "name": "TSH", "value": "2.3", "unit": "mIU/L", "referenceRange": "0.4-4.0", "status": "normal", "aiExplanation": "Φυσιολογικός θυρεοειδής." }
+    ],
+    "aiSummary": "Βασικός έλεγχος φυσιολογικός. Παραπομπή στον γυναικολόγο για διερεύνηση ανώμαλου κύκλου."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "testDateDaysAgo": 55,
+    "labName": "Βιοιατρική Αθηνών",
+    "testType": "blood",
+    "values": [
+      { "name": "HbA1c", "value": "7.2", "unit": "%", "referenceRange": "<7.0", "status": "high", "aiExplanation": "Άνω του στόχου (<7%). Δείχνει ανεπαρκή γλυκαιμικό έλεγχο τελευταίων 3 μηνών. Αύξηση αγωγής." },
+      { "name": "Γλυκόζη νηστείας", "value": "138", "unit": "mg/dL", "referenceRange": "70-99", "status": "high", "aiExplanation": "Σημαντικά αυξημένη γλυκόζη νηστείας. Επίδραση διατροφής και αδράνειας λόγω πόνου." },
+      { "name": "Κρεατινίνη", "value": "1.18", "unit": "mg/dL", "referenceRange": "0.7-1.2", "status": "normal", "aiExplanation": "Στα ανώτερα φυσιολογικά. GFR ~65 mL/min — ΧΝΝ stage 2 παρακολουθείται." },
+      { "name": "LDL", "value": "145", "unit": "mg/dL", "referenceRange": "<70 (σε ΣΔ υψηλού κινδύνου)", "status": "high", "aiExplanation": "Σημαντικά άνω του στόχου για διαβητικό ασθενή. Αύξηση σε ισχυρότερη στατίνη (rosuvastatin)." },
+      { "name": "Μικρολευκωματινουρία", "value": "42", "unit": "mg/g creatinine", "referenceRange": "<30", "status": "high", "aiExplanation": "Θετική μικρολευκωματινουρία — πρώιμη διαβητική νεφροπάθεια. Έναρξη ACE-i κρίσιμη." },
+      { "name": "Ουρικό Οξύ", "value": "7.8", "unit": "mg/dL", "referenceRange": "<7.0", "status": "high", "aiExplanation": "Ασυμπτωματική υπερουριχαιμία. Παρακολούθηση — αν συμπτωματική, θεραπεία." },
+      { "name": "ALT", "value": "35", "unit": "U/L", "referenceRange": "7-56", "status": "normal", "aiExplanation": "Ηπατική λειτουργία φυσιολογική." },
+      { "name": "Κάλιο (K+)", "value": "4.2", "unit": "mEq/L", "referenceRange": "3.5-5.0", "status": "normal", "aiExplanation": "Φυσιολογικό κάλιο — σημαντικό υπό ACE-i και diuretics." }
+    ],
+    "aiSummary": "Ανεπαρκής γλυκαιμικός έλεγχος (HbA1c 7.2%). LDL πολύ άνω του στόχου για διαβητικό. Πρώιμη νεφροπάθεια (μικρολευκωματινουρία). Τροποποίηση αγωγής: αύξηση μετφορμίνης + rosuvastatin + ACE-i."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "testDateDaysAgo": 240,
+    "labName": "Synlab Hellas",
+    "testType": "blood",
+    "values": [
+      { "name": "HbA1c (νεοδιάγνωση)", "value": "8.1", "unit": "%", "referenceRange": "<7.0", "status": "high", "aiExplanation": "Αρχική τιμή κατά τη διάγνωση ΣΔ2. Σημαντικά άνω του στόχου — έναρξη θεραπείας." },
+      { "name": "Γλυκόζη νηστείας", "value": "168", "unit": "mg/dL", "referenceRange": "70-99", "status": "high", "aiExplanation": "Πολύ αυξημένη. Επιβεβαίωση ΣΔ2 σε 2η μέτρηση." },
+      { "name": "Χοληστερίνη ολική", "value": "248", "unit": "mg/dL", "referenceRange": "<200", "status": "high", "aiExplanation": "Σοβαρή δυσλιπιδαιμία — έναρξη στατίνης." },
+      { "name": "ΑΠ (καταγεγραμμένη)", "value": "162/100", "unit": "mmHg", "referenceRange": "<130/80", "status": "high", "aiExplanation": "Υπέρταση stage 2 — έναρξη αντιυπερτασικής αγωγής." }
+    ],
+    "aiSummary": "Αρχικές μετρήσεις κατά τη διάγνωση ΣΔ2 + Υπέρτασης + Δυσλιπιδαιμίας. Ταυτόχρονη αντιμετώπιση και των τριών παραγόντων κινδύνου."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "testDateDaysAgo": 90,
+    "labName": "Βιοιατρική Αθηνών",
+    "testType": "blood",
+    "values": [
+      { "name": "GFR (εκτιμώμενο)", "value": "68", "unit": "mL/min/1.73m²", "referenceRange": ">90 (φυσιολογικό)", "status": "low", "aiExplanation": "ΧΝΝ stage 2 (GFR 60-89). Επιβαδύνθηκε από διαβητική νεφροπάθεια." },
+      { "name": "Κρεατινίνη", "value": "1.15", "unit": "mg/dL", "referenceRange": "0.7-1.2", "status": "normal", "aiExplanation": "Στα ανώτερα φυσιολογικά ορίου." },
+      { "name": "Ουρία", "value": "42", "unit": "mg/dL", "referenceRange": "15-45", "status": "normal", "aiExplanation": "Φυσιολογική ουρία." },
+      { "name": "Μικρολευκωματινουρία", "value": "28", "unit": "mg/g", "referenceRange": "<30", "status": "normal", "aiExplanation": "Βελτίωση μετά έναρξη ACE-i (από 42 mg/g). Νεφροπροστατευτική δράση ramipril." },
+      { "name": "HbA1c", "value": "7.0", "unit": "%", "referenceRange": "<7.0", "status": "normal", "aiExplanation": "Στο στόχο! Βελτίωση από 7.2% — επίδραση sitagliptin." }
+    ],
+    "aiSummary": "Βελτίωση γλυκαιμίας (HbA1c στο στόχο 7.0%). Μικρολευκωματινουρία μειώθηκε σε φυσιολογικά με ramipril. ΧΝΝ σταθερό. Συνέχιση τρέχουσας αγωγής."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "testDateDaysAgo": 300,
+    "labName": "Αλφα Lab",
+    "testType": "blood",
+    "values": [
+      { "name": "HbA1c", "value": "7.6", "unit": "%", "referenceRange": "<7.0", "status": "high", "aiExplanation": "Βελτίωση από 8.1% αρχικά — αλλά ακόμα άνω του στόχου. Τιτλοποίηση μετφορμίνης." },
+      { "name": "LDL", "value": "98", "unit": "mg/dL", "referenceRange": "<70", "status": "high", "aiExplanation": "Βελτίωση από 145 mg/dL με ατορβαστατίνη, αλλά άνω στόχου για ΣΔ υψηλού κινδύνου." },
+      { "name": "ΑΠ σύνολο ελέγχου", "value": "152/94", "unit": "mmHg", "referenceRange": "<130/80", "status": "high", "aiExplanation": "Βελτίωση από 162/100 — προσθήκη indapamide εξετάζεται." }
+    ],
+    "aiSummary": "Σταδιακή βελτίωση σε όλους τους δείκτες μετά 3 μήνες αγωγής. Ακόμα άνω στόχων — τροποποίηση θεραπείας."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "testDateDaysAgo": 420,
+    "labName": "Βιοιατρική Αθηνών",
+    "testType": "other",
+    "values": [
+      { "name": "MRI Γόνατος Αριστερό", "value": "Οστεοαρθρίτιδα grade II-III", "unit": "", "referenceRange": "Φυσιολογικό", "status": "high", "aiExplanation": "Μέτρια-σοβαρή οστεοαρθρίτιδα αριστερού γόνατος. Χόνδρος εκφυλισμένος κεντρικά. Χωρίς πλήρη ρήξη." },
+      { "name": "MRI Γόνατος Δεξιό", "value": "Οστεοαρθρίτιδα grade II", "unit": "", "referenceRange": "Φυσιολογικό", "status": "high", "aiExplanation": "Μέτρια οστεοαρθρίτιδα δεξιού γόνατος. Ηπιότερη βαρύτητα." }
+    ],
+    "aiSummary": "Αμφίπλευρη οστεοαρθρίτιδα γονάτων — αριστερά βαρύτερη. Θεραπεία: φυσιοθεραπεία, ενδαρθρικό υαλουρονικό. Αρθροπλαστική εξετάζεται αριστερά αν δεν βελτιωθεί."
+  }
+]

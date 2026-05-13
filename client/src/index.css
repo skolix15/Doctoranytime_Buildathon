@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0066CC;
+  --primary-hover: #0052A3;
+  --primary-light: #E8F2FC;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body { background-color: #F8F9FB; color: #1E2533; }
+
+.card { @apply bg-white rounded-xl border border-gray-100 shadow-sm; }
+.btn-primary { @apply bg-primary hover:bg-primary-hover text-white font-medium px-4 py-2 rounded-lg transition-colors; }
+.btn-secondary { @apply border border-primary text-primary hover:bg-primary-light font-medium px-4 py-2 rounded-lg transition-colors; }
+.btn-ghost { @apply text-gray-600 hover:bg-gray-100 font-medium px-4 py-2 rounded-lg transition-colors; }
+.input-field { @apply w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-light transition-all; }
+.badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium; }
+.skeleton { @apply animate-pulse bg-gray-200 rounded; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #C9CDD4; border-radius: 3px; }

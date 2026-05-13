@@ -1,0 +1,336 @@
+[
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "doctor@test.com",
+    "daysFromNow": 4,
+    "type": "in-person", "service": "Καρδιολογικός Έλεγχος - Παρακολούθηση Υπέρτασης",
+    "status": "confirmed",
+    "aiBrief": "Ασθενής 40 ετών με υπέρταση stage 1 υπό Amlodipine 5mg. Τελευταία πίεση 138/88. Prediabetes HbA1c 5.9%.",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "endo@medplatform.gr",
+    "daysFromNow": 18,
+    "type": "video", "service": "Ενδοκρινολογία - Έλεγχος Prediabetes",
+    "status": "confirmed",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "gp@medplatform.gr",
+    "daysFromNow": -14,
+    "type": "in-person", "service": "Γενικός Έλεγχος - Ετήσιο Check-up",
+    "status": "completed",
+    "notes": "Γενική καλή κατάσταση. Πίεση 140/88 — σύσταση αύξησης δόσης Amlodipine.",
+    "diagnosis": [{ "code": "Z00.0", "description": "Ετήσιος προληπτικός έλεγχος" }],
+    "prescriptions": [{ "medication": "Amlodipine", "dosage": "10mg", "duration": "3 μήνες" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "doctor@test.com",
+    "daysFromNow": -45,
+    "type": "in-person", "service": "Καρδιολογική Παρακολούθηση",
+    "status": "completed",
+    "notes": "Υπερηχοκαρδιογράφημα: φυσιολογικό. EF 62%. Άριστη ανταπόκριση στη θεραπεία.",
+    "diagnosis": [{ "code": "I10", "description": "Υπέρταση" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "endo@medplatform.gr",
+    "daysFromNow": -75,
+    "type": "in-person", "service": "Ενδοκρινολογία - Διαχείριση Prediabetes",
+    "status": "completed",
+    "notes": "HbA1c 5.9%. Σύσταση Mediterranean diet και 150 λεπτά/εβδ αερόβια. Επανέλεγχος σε 3 μήνες.",
+    "diagnosis": [{ "code": "R73.09", "description": "Prediabetes" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "gp@medplatform.gr",
+    "daysFromNow": -120,
+    "type": "in-person", "service": "Γενική Εξέταση - Κόπωση",
+    "status": "completed",
+    "notes": "Κόπωση λόγω σιδηροπενικής αναιμίας. Φερριτίνη 8 ng/mL. Συνταγογράφηση σιδήρου.",
+    "diagnosis": [{ "code": "D50.9", "description": "Σιδηροπενική αναιμία" }],
+    "prescriptions": [{ "medication": "Ferrous sulfate", "dosage": "200mg", "duration": "3 μήνες" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "doctor@test.com",
+    "daysFromNow": -180,
+    "type": "video", "service": "Καρδιολογία - Τηλεiατρική Παρακολούθηση",
+    "status": "completed",
+    "notes": "Η πίεση βελτιώθηκε με θεραπεία (από 165/105 → 142/90). Συνέχιση Amlodipine 5mg."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "haem@medplatform.gr",
+    "daysFromNow": -200,
+    "type": "in-person", "service": "Αιματολογική Εκτίμηση - Αναιμία",
+    "status": "completed",
+    "notes": "Σιδηροπενική αναιμία επιβεβαιωμένη. Αποκλεισμός GI αιτίας. Έναρξη σιδήρου.",
+    "diagnosis": [{ "code": "D50.9", "description": "Σιδηροπενική αναιμία" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "gp@medplatform.gr",
+    "daysFromNow": -250,
+    "type": "in-person", "service": "Παθολογικός Έλεγχος",
+    "status": "completed",
+    "notes": "Ανακάλυψη υπέρτασης τυχαία σε μέτρηση. ΑΠ 165/105. Παραπομπή καρδιολόγου.",
+    "diagnosis": [{ "code": "I10", "description": "Πρωτοπαθής υπέρταση" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "ophth@medplatform.gr",
+    "daysFromNow": -300,
+    "type": "in-person", "service": "Οφθαλμολογικός Έλεγχος",
+    "status": "completed",
+    "notes": "Βυθοσκόπηση: χωρίς υπερτασικές αλλοιώσεις. Ελαφρά μυωπία -1D. Σύσταση γυαλιών."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "derm@medplatform.gr",
+    "daysFromNow": -350,
+    "type": "in-person", "service": "Δερματολογική Εξέταση",
+    "status": "completed",
+    "notes": "Έλεγχος ελιών — ABCDE φυσιολογικά. Ακμή ενηλίκων ήπια. Τοπικό tretinoin."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "endo@medplatform.gr",
+    "daysFromNow": -400,
+    "type": "in-person", "service": "Ενδοκρινολογία - Θυρεοειδής",
+    "status": "completed",
+    "notes": "TSH φυσιολογικό. Γλυκόζη νηστείας 108 mg/dL — οριακό prediabetes. Παρακολούθηση.",
+    "diagnosis": [{ "code": "R73.01", "description": "Impaired fasting glucose" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "gp2@medplatform.gr",
+    "daysFromNow": -30,
+    "type": "in-person", "service": "Επείγουσα Εξέταση - Λοίμωξη Αναπνευστικού",
+    "status": "completed",
+    "notes": "Ιογενής λοίμωξη ανώτερου αναπνευστικού. Αντιπυρετικά, ανάπαυση. Χωρίς αντιβίωση.",
+    "diagnosis": [{ "code": "J06.9", "description": "Οξεία ιογενής λοίμωξη ανώτερου αναπνευστικού" }]
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "doctor@test.com",
+    "daysFromNow": -500,
+    "type": "in-person", "service": "Καρδιολογία - Stress Test",
+    "status": "completed",
+    "notes": "Δοκιμασία κόπωσης: αρνητική για ισχαιμία. Καλή καρδιαγγειακή επίδοση."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "_doctorEmail": "gp@medplatform.gr",
+    "daysFromNow": 45,
+    "type": "in-person", "service": "Παθολογικός Έλεγχος - Εξετάσεις Αίματος",
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "gyn@medplatform.gr",
+    "daysFromNow": 7,
+    "type": "in-person", "service": "Γυναικολογικός Έλεγχος - PCOS Παρακολούθηση",
+    "status": "confirmed",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "psych@medplatform.gr",
+    "daysFromNow": 14,
+    "type": "video", "service": "Ψυχιατρική Συνεδρία - ΓΑΔ CBT",
+    "status": "confirmed",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "neuro@medplatform.gr",
+    "daysFromNow": -10,
+    "type": "in-person", "service": "Νευρολογία - Ημικρανία Αξιολόγηση",
+    "status": "completed",
+    "notes": "Ημικρανία με αύρα επιβεβαιωμένη. Topiramate 25mg για πρόληψη. Triptan PRN.",
+    "diagnosis": [{ "code": "G43.1", "description": "Ημικρανία με αύρα" }],
+    "prescriptions": [{ "medication": "Topiramate", "dosage": "25mg βραδινό", "duration": "6 μήνες" }]
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "gyn@medplatform.gr",
+    "daysFromNow": -60,
+    "type": "in-person", "service": "Γυναικολογία - Αξιολόγηση PCOS",
+    "status": "completed",
+    "notes": "PCOS επιβεβαιωμένο. Τεστοστερόνη ελαφρά αυξημένη. Σύσταση low GI δίαιτα, άσκηση.",
+    "diagnosis": [{ "code": "E28.2", "description": "PCOS" }]
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "psych@medplatform.gr",
+    "daysFromNow": -90,
+    "type": "video", "service": "Ψυχιατρική Αξιολόγηση - ΓΑΔ",
+    "status": "completed",
+    "notes": "ΓΑΔ διαγνώθηκε. Έναρξη CBT εβδομαδιαίως. Χωρίς φαρμακευτική αγωγή αρχικά.",
+    "diagnosis": [{ "code": "F41.1", "description": "Γενικευμένη αγχώδης διαταραχή" }]
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "derm@medplatform.gr",
+    "daysFromNow": -150,
+    "type": "in-person", "service": "Δερματολογία - Ορμονική Ακμή",
+    "status": "completed",
+    "notes": "Ορμονική ακμή λόγω PCOS. Τοπικό azelaic acid 15%. Σπιρονολακτόνη 50mg.",
+    "diagnosis": [{ "code": "L70.0", "description": "Ακμή ενηλίκων ορμονική" }],
+    "prescriptions": [{ "medication": "Spironolactone", "dosage": "50mg", "duration": "6 μήνες" }]
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "gp@medplatform.gr",
+    "daysFromNow": -200,
+    "type": "in-person", "service": "Παθολογικός Έλεγχος",
+    "status": "completed",
+    "notes": "Ετήσιος έλεγχος. Παραπομπή γυναικολόγου λόγω ανώμαλου κύκλου."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "neuro@medplatform.gr",
+    "daysFromNow": -280,
+    "type": "in-person", "service": "Νευρολογία - Πρώτη Αξιολόγηση Πονοκεφάλων",
+    "status": "completed",
+    "notes": "Ιστορικό ημικρανιών από εφηβεία. Ημερολόγιο πονοκεφάλων ζητήθηκε. NSAIDs για κρίση (χωρίς ιβουπροφαίνη λόγω ανοχής — παρακεταμόλη)."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "gyn@medplatform.gr",
+    "daysFromNow": 35,
+    "type": "in-person", "service": "Γυναικολογία - Pap Test & Υπερηχογράφημα",
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "_doctorEmail": "psych@medplatform.gr",
+    "daysFromNow": -350,
+    "type": "video", "service": "Ψυχιατρική - Αρχική Αξιολόγηση",
+    "status": "completed",
+    "notes": "Παραπομπή από ΓΠ. Άγχος και αϋπνία >6 μηνών. Καταγραφή ιστορικού."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "endo@medplatform.gr",
+    "daysFromNow": 5,
+    "type": "in-person", "service": "Ενδοκρινολογία - Έλεγχος ΣΔ2",
+    "status": "confirmed",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "doctor@test.com",
+    "daysFromNow": 22,
+    "type": "in-person", "service": "Καρδιολογία - Υπέρταση & Καρδιαγγειακός Κίνδυνος",
+    "status": "confirmed",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "ortho@medplatform.gr",
+    "daysFromNow": -8,
+    "type": "in-person", "service": "Ορθοπεδικός - Γόνατα Αξιολόγηση",
+    "status": "completed",
+    "notes": "Αμφίπλευρη οστεοαρθρίτιδα γονάτων grade II-III. Ενδείξεις αρθροπλαστικής αριστερού αν δεν βελτιωθεί. Φυσιοθεραπεία, υαλουρονικό ένεση.",
+    "diagnosis": [{ "code": "M17.0", "description": "Οστεοαρθρίτιδα αμφοτέρων γονάτων" }],
+    "prescriptions": [{ "medication": "Hyaluronic acid injection", "dosage": "3ml ενδαρθρικά αριστερά", "duration": "μία δόση" }]
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "endo@medplatform.gr",
+    "daysFromNow": -55,
+    "type": "in-person", "service": "Ενδοκρινολογία - ΣΔ2 Τιτλοποίηση",
+    "status": "completed",
+    "notes": "HbA1c 7.2% — άνω του στόχου. Αύξηση δόσης μετφορμίνης. Προσθήκη sitagliptin.",
+    "diagnosis": [{ "code": "E11.9", "description": "ΣΔ τύπου 2" }],
+    "prescriptions": [
+      { "medication": "Metformin", "dosage": "2000mg/ημέρα", "duration": "μακροχρόνια" },
+      { "medication": "Sitagliptin", "dosage": "100mg/ημέρα", "duration": "6 μήνες" }
+    ]
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "nephro@medplatform.gr",
+    "daysFromNow": -90,
+    "type": "in-person", "service": "Νεφρολογία - Παρακολούθηση ΧΝΝ",
+    "status": "completed",
+    "notes": "ΧΝΝ stage 2 (GFR 68 mL/min). Μικρολευκωματινουρία θετική. Ramipril αυξήθηκε.",
+    "diagnosis": [{ "code": "N18.2", "description": "ΧΝΝ stage 2" }]
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "doctor@test.com",
+    "daysFromNow": -130,
+    "type": "in-person", "service": "Καρδιολογία - Υπέρταση",
+    "status": "completed",
+    "notes": "Πίεση 158/98 υπό αγωγή. Προσθήκη indapamide. Holter 24ωρο φυσιολογικό.",
+    "diagnosis": [{ "code": "I10", "description": "Υπέρταση stage 2" }],
+    "prescriptions": [{ "medication": "Indapamide", "dosage": "1.5mg SR", "duration": "6 μήνες" }]
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "ortho@medplatform.gr",
+    "daysFromNow": -180,
+    "type": "in-person", "service": "Ορθοπεδικός - Πρώτη Αξιολόγηση Γόνατος",
+    "status": "completed",
+    "notes": "Πόνος γονάτων >2 χρόνια. MRI: σχηματισμός εκφύλισης χόνδρου. Φυσιοθεραπεία πρώτα.",
+    "diagnosis": [{ "code": "M17.9", "description": "Οστεοαρθρίτιδα γόνατος" }]
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "gp@medplatform.gr",
+    "daysFromNow": -240,
+    "type": "in-person", "service": "Γενικός Έλεγχος",
+    "status": "completed",
+    "notes": "Ανακάλυψη ΣΔ2 και υπέρτασης σε ρουτίνα. Παραπομπή ενδοκρινολόγου και καρδιολόγου."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "rheum@medplatform.gr",
+    "daysFromNow": -300,
+    "type": "in-person", "service": "Ρευματολογία - Αρθρολγία",
+    "status": "completed",
+    "notes": "Αποκλεισμός ρευματοειδούς αρθρίτιδας. RF αρνητικό, CRP ήπια αυξημένο. Οστεοαρθρίτιδα.",
+    "diagnosis": [{ "code": "M15", "description": "Πολυαρθρώσεις πρωτοπαθείς" }]
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "endo@medplatform.gr",
+    "daysFromNow": -380,
+    "type": "in-person", "service": "Ενδοκρινολογία - Αρχική Αξιολόγηση",
+    "status": "completed",
+    "notes": "ΣΔ2 νεοδιαγνωσθείς. HbA1c 8.1%. Έναρξη μετφορμίνης 500mg. Εκπαίδευση σακχαροδιαβητικού."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "nephro@medplatform.gr",
+    "daysFromNow": 30,
+    "type": "in-person", "service": "Νεφρολογία - Τακτικός Έλεγχος",
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "ophth@medplatform.gr",
+    "daysFromNow": -420,
+    "type": "in-person", "service": "Οφθαλμολογία - Βυθοσκόπηση Διαβητικός",
+    "status": "completed",
+    "notes": "Βυθοσκόπηση: χωρίς διαβητική αμφιβληστροειδοπάθεια. Επανέλεγχος σε 1 χρόνο."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "_doctorEmail": "gp2@medplatform.gr",
+    "daysFromNow": -25,
+    "type": "in-person", "service": "Γενικός - Πόνοι στο Στήθος (Αποκλεισμός)",
+    "status": "completed",
+    "notes": "Θωρακικό άλγος μυοσκελετικής αιτιολογίας. ΗΚΓ φυσιολογικό. Troponin αρνητικό.",
+    "diagnosis": [{ "code": "M79.3", "description": "Παννευρίτις πανευαισθησία" }]
+  }
+]

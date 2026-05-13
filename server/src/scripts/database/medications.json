@@ -1,0 +1,268 @@
+[
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Amlodipine (Norvasc)",
+    "dosage": "10mg", "frequency": "1x ημερησίως πρωί",
+    "_prescribedByEmail": "doctor@test.com",
+    "startDateDaysAgo": 90, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "Ανταγωνιστής ασβεστίου για τη μείωση της αρτηριακής πίεσης. Χαλαρώνει τα αιμοφόρα αγγεία.",
+    "sideEffects": "Πιθανό οίδημα αστραγάλων, ζάλη κατά την έγερση. Σπάνια: ερυθρότητα προσώπου."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Ατορβαστατίνη (Lipitor)",
+    "dosage": "10mg", "frequency": "1x ημερησίως βράδυ",
+    "_prescribedByEmail": "doctor@test.com",
+    "startDateDaysAgo": 90, "isActive": true,
+    "reminders": [{ "time": "21:00", "channel": "push" }],
+    "plainDescription": "Στατίνη που μειώνει την LDL χοληστερίνη. Πρόληψη καρδιαγγειακών επεισοδίων.",
+    "sideEffects": "Σπάνια μυαλγίες. Αποφύγετε χυμό γκρέιπφρουτ. Παρακολούθηση ηπατικών ετησίως."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Φολικό Οξύ",
+    "dosage": "400mcg", "frequency": "1x ημερησίως πρωί",
+    "startDateDaysAgo": 60, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "Βιταμίνη Β9. Πρόληψη αναιμίας και υποστήριξη ανοσοποιητικού.",
+    "sideEffects": "Πολύ σπάνιες παρενέργειες. Ασφαλές σε μακροχρόνια χρήση."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Βιταμίνη D3",
+    "dosage": "2000 IU", "frequency": "1x ημερησίως",
+    "startDateDaysAgo": 120, "isActive": true,
+    "reminders": [{ "time": "13:00", "channel": "push" }],
+    "plainDescription": "Βιταμίνη D για οστεοπροστασία και ανοσοποιητική υποστήριξη. Επίπεδα 25-OH-D3 ήταν χαμηλά.",
+    "sideEffects": "Ασφαλές σε συνιστώμενες δόσεις. Αποφύγετε υπερβολικές ποσότητες."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Ασπιρίνη",
+    "dosage": "100mg", "frequency": "1x ημερησίως βράδυ",
+    "_prescribedByEmail": "doctor@test.com",
+    "startDateDaysAgo": 90, "isActive": true,
+    "reminders": [{ "time": "21:00", "channel": "push" }],
+    "plainDescription": "Αντιαιμοπεταλιακό για πρόληψη θρομβωτικών επεισοδίων λόγω καρδιαγγειακού κινδύνου.",
+    "sideEffects": "Πιθανή γαστρεντερική ανοχή — λαμβάνετε με φαγητό. Αποφύγετε αν αλλεργικός."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Ωμέγα-3 Λιπαρά Οξέα",
+    "dosage": "1000mg", "frequency": "2x ημερησίως με γεύματα",
+    "startDateDaysAgo": 60, "isActive": true,
+    "reminders": [{ "time": "13:00", "channel": "push" }],
+    "plainDescription": "Συμπλήρωμα για μείωση τριγλυκεριδίων και προστασία καρδιαγγειακού συστήματος.",
+    "sideEffects": "Πιθανή 'ψαρίλα' στην αναπνοή. Αποφύγετε σε αλλεργία ψαριών."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Μαγνήσιο",
+    "dosage": "300mg", "frequency": "1x ημερησίως βράδυ",
+    "startDateDaysAgo": 45, "isActive": true,
+    "reminders": [{ "time": "22:00", "channel": "push" }],
+    "plainDescription": "Μαγνήσιο για καλύτερο ύπνο, μείωση μυϊκών κραμπών και υποστήριξη καρδιαγγειακής λειτουργίας.",
+    "sideEffects": "Σε μεγάλες δόσεις: χαλαρωτικό εντέρου. Σε κανονικές δόσεις ασφαλές."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Μετφορμίνη (Glucophage)",
+    "dosage": "500mg", "frequency": "1x ημερησίως με μεσημεριανό",
+    "_prescribedByEmail": "endo@medplatform.gr",
+    "startDateDaysAgo": 30, "isActive": true,
+    "reminders": [{ "time": "13:00", "channel": "push" }],
+    "plainDescription": "Για prediabetes υψηλού κινδύνου. Βελτιώνει ευαισθησία στην ινσουλίνη και μειώνει γλυκόζη.",
+    "sideEffects": "Αρχικά: ναυτία, διάρροια — υποχωρεί σε 2-3 εβδομάδες. Λαμβάνεται πάντα με φαγητό."
+  },
+  {
+    "_patientEmail": "patient@test.com",
+    "name": "Paracetamol (Depon)",
+    "dosage": "500mg", "frequency": "PRN (μέχρι 3x ημερησίως)",
+    "startDateDaysAgo": 30, "isActive": false,
+    "plainDescription": "Αναλγητικό/αντιπυρετικό. Χρήση έκτακτης ανάγκης για πυρετό ή πόνο.",
+    "sideEffects": "Ασφαλές σε συνιστώμενες δόσεις. Μη υπερβαίνετε 4g/ημέρα. Επικίνδυνο σε αλκοολισμό."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Topiramate (Topamax)",
+    "dosage": "25mg → 50mg", "frequency": "1x ημερησίως βράδυ",
+    "_prescribedByEmail": "neuro@medplatform.gr",
+    "startDateDaysAgo": 10, "isActive": true,
+    "reminders": [{ "time": "22:00", "channel": "push" }],
+    "plainDescription": "Προφυλακτικό φάρμακο για ημικρανία. Μειώνει συχνότητα και ένταση κρίσεων.",
+    "sideEffects": "Πιθανή: μουδιάσματα χεριών/ποδιών, γνωστικό 'ομίχλη', απώλεια βάρους. Αρχίστε χαμηλά."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Sumatriptan (Imigran)",
+    "dosage": "50mg", "frequency": "PRN (κατά κρίση, μέχρι 2x/24ωρο)",
+    "_prescribedByEmail": "neuro@medplatform.gr",
+    "startDateDaysAgo": 10, "isActive": true,
+    "plainDescription": "Τριπτάνη για αντιμετώπιση κρίσης ημικρανίας. Λαμβάνετε αμέσως με έναρξη συμπτωμάτων.",
+    "sideEffects": "Πιθανή: ναυτία, ζάλη, θωρακικός δισφορισμός. Μη χρησιμοποιείτε >10 ημέρες/μήνα."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Spironolactone",
+    "dosage": "50mg", "frequency": "1x ημερησίως πρωί",
+    "_prescribedByEmail": "derm@medplatform.gr",
+    "startDateDaysAgo": 150, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "Αντιανδρογόνο για θεραπεία ορμονικής ακμής λόγω PCOS. Επίσης βοηθά στην αντιπηκτική ισορροπία.",
+    "sideEffects": "Πιθανή: συχνοουρία, ναυτία. Μη λαμβάνετε σε εγκυμοσύνη. Παρακολούθηση καλίου."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Inositol (Myo-Inositol)",
+    "dosage": "2000mg", "frequency": "2x ημερησίως",
+    "startDateDaysAgo": 60, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }, { "time": "20:00", "channel": "push" }],
+    "plainDescription": "Συμπλήρωμα για PCOS. Βελτιώνει ευαισθησία ινσουλίνης και ωοθηκική λειτουργία.",
+    "sideEffects": "Πολύ ασφαλές. Ήπια γαστρεντερική δυσφορία αρχικά σε μεγάλες δόσεις."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Μαγνήσιο Γλυκινάτη",
+    "dosage": "400mg", "frequency": "1x ημερησίως βράδυ",
+    "startDateDaysAgo": 30, "isActive": true,
+    "reminders": [{ "time": "21:30", "channel": "push" }],
+    "plainDescription": "Για πρόληψη ημικρανιών (μαγνήσιο μειώνει συχνότητα κρίσεων) και βελτίωση ύπνου.",
+    "sideEffects": "Ήπιο χαλαρωτικό αποτέλεσμα. Ασφαλές σε συνιστώμενες δόσεις."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Βιταμίνη D3 + K2",
+    "dosage": "2000 IU D3 + 100mcg K2", "frequency": "1x ημερησίως",
+    "startDateDaysAgo": 90, "isActive": true,
+    "reminders": [{ "time": "12:00", "channel": "push" }],
+    "plainDescription": "Βιταμίνες D3 και K2 για οστεοπροστασία. Χαμηλά επίπεδα D3 ευρέθηκαν σε εξετάσεις.",
+    "sideEffects": "Ασφαλές. K2 βοηθά τον D3 να κατευθύνει ασβέστιο στα οστά αντί των αρτηριών."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Zinc",
+    "dosage": "25mg", "frequency": "1x ημερησίως",
+    "startDateDaysAgo": 45, "isActive": true,
+    "reminders": [{ "time": "12:00", "channel": "push" }],
+    "plainDescription": "Ψευδάργυρος για βελτίωση ακμής PCOS. Έχει αντιανδρογόνο και αντιφλεγμονώδη δράση.",
+    "sideEffects": "Σε κενό στομάχι: ναυτία. Λαμβάνετε με λίγο φαγητό."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Paracetamol",
+    "dosage": "1000mg", "frequency": "PRN κατά ημικρανία (αν τριπτάνη μη διαθέσιμη)",
+    "startDateDaysAgo": 180, "isActive": true,
+    "plainDescription": "Αναλγητικό εναλλακτικό για κρίση ημικρανίας. Λαμβάνεται στην αρχή συμπτωμάτων.",
+    "sideEffects": "Ασφαλές. Μη υπερβαίνετε 4g/ημέρα. Αποφύγετε με αλκοόλ."
+  },
+  {
+    "_patientEmail": "patient2@test.com",
+    "name": "Omegas-3 EPA/DHA",
+    "dosage": "1000mg EPA + 500mg DHA", "frequency": "1x ημερησίως",
+    "startDateDaysAgo": 60, "isActive": true,
+    "reminders": [{ "time": "13:00", "channel": "push" }],
+    "plainDescription": "Ωμέγα-3 για μείωση φλεγμονής PCOS, βελτίωση λιπιδίων και υποστήριξη ψυχικής υγείας.",
+    "sideEffects": "Ήπια γαστρεντερική δυσφορία σε υψηλές δόσεις. Ήπιο αντιπηκτικό αποτέλεσμα."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Metformin (Glucophage XR)",
+    "dosage": "1000mg 2x ημερησίως", "frequency": "Πρωί και βράδυ με γεύμα",
+    "_prescribedByEmail": "endo@medplatform.gr",
+    "startDateDaysAgo": 380, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }, { "time": "20:00", "channel": "push" }],
+    "plainDescription": "Πρώτη γραμμή για ΣΔ2. Μειώνει παραγωγή γλυκόζης στο ήπαρ και βελτιώνει ευαισθησία ινσουλίνης.",
+    "sideEffects": "Extended release (XR) καλύτερα ανεκτή. Ήπια GI κατά αλλαγή δόσης. Έλεγχος Β12 ετησίως."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Sitagliptin (Januvia)",
+    "dosage": "100mg", "frequency": "1x ημερησίως πρωί",
+    "_prescribedByEmail": "endo@medplatform.gr",
+    "startDateDaysAgo": 55, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "DPP-4 αναστολέας. Αυξάνει ινσουλίνη μόνο όταν η γλυκόζη είναι υψηλή — χαμηλός κίνδυνος υπογλυκαιμίας.",
+    "sideEffects": "Γενικά καλά ανεκτή. Σπάνια: ανώτερη αναπνευστική λοίμωξη, αρθραλγία."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Ramipril (Triatec)",
+    "dosage": "10mg", "frequency": "1x ημερησίως πρωί",
+    "_prescribedByEmail": "doctor@test.com",
+    "startDateDaysAgo": 240, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "ACE αναστολέας για υπέρταση και νεφροπροστασία σε ΣΔ2. Μειώνει μικρολευκωματινουρία.",
+    "sideEffects": "Ξηρός βήχας σε ~10% (αν ενοχλητικός: εναλλαγή σε ARB). Μη συνδυάζετε με NSAIDs."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Indapamide SR (Natrilix)",
+    "dosage": "1.5mg", "frequency": "1x ημερησίως πρωί",
+    "_prescribedByEmail": "doctor@test.com",
+    "startDateDaysAgo": 130, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "Θειαζιδοειδές διουρητικό για υπέρταση. Ήπιο διουρητικό με αγγειοδιασταλτική δράση.",
+    "sideEffects": "Ήπια: πολυουρία αρχικά, ηλεκτρολυτικές διαταραχές σπάνια. Έλεγχος Κ+/Νa+ ανά 3μηνο."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Rosuvastatin (Crestor)",
+    "dosage": "20mg", "frequency": "1x ημερησίως βράδυ",
+    "_prescribedByEmail": "doctor@test.com",
+    "startDateDaysAgo": 240, "isActive": true,
+    "reminders": [{ "time": "21:00", "channel": "push" }],
+    "plainDescription": "Ισχυρή στατίνη. Μειώνει LDL >50%. Πρωτογενής πρόληψη καρδιαγγειακών σε διαβητικό.",
+    "sideEffects": "Σπάνια μυαλγίες/ραβδομυόλυση — αναφέρετε άμεσα έντονο μυϊκό πόνο. Ηπατικός έλεγχος ετησίως."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Glucosamine + Chondroitin",
+    "dosage": "1500mg + 1200mg", "frequency": "1x ημερησίως",
+    "_prescribedByEmail": "ortho@medplatform.gr",
+    "startDateDaysAgo": 180, "isActive": true,
+    "reminders": [{ "time": "12:00", "channel": "push" }],
+    "plainDescription": "Συμπλήρωμα για χόνδρο γόνατος. Μπορεί να μειώσει πόνο οστεοαρθρίτιδας σε 4-6 εβδομάδες.",
+    "sideEffects": "Πολύ ασφαλές. Ήπια GI αν νηστικός. Προσοχή σε αλλεργία στα οστρακοειδή."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Παρακεταμόλη Extended Release",
+    "dosage": "665mg", "frequency": "3x ημερησίως για πόνο γονάτου",
+    "_prescribedByEmail": "ortho@medplatform.gr",
+    "startDateDaysAgo": 90, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }, { "time": "14:00", "channel": "push" }, { "time": "20:00", "channel": "push" }],
+    "plainDescription": "Αναλγητικό πρώτης γραμμής για οστεοαρθρίτιδα (αντί NSAIDs λόγω νεφρικής νόσου και ΣΔ).",
+    "sideEffects": "Ασφαλές σε σωστές δόσεις. ΜΕΓΙΣΤΟ: 3g/ημέρα σε νεφρική νόσο. Αποφύγετε με αλκοόλ."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Βιταμίνη D3",
+    "dosage": "4000 IU", "frequency": "1x ημερησίως",
+    "_prescribedByEmail": "nephro@medplatform.gr",
+    "startDateDaysAgo": 90, "isActive": true,
+    "reminders": [{ "time": "12:00", "channel": "push" }],
+    "plainDescription": "Νεφρική νόσος μειώνει παραγωγή D3. Υψηλότερη δόση απαραίτητη. Επίπεδα 25-OH-D3 22 ng/mL.",
+    "sideEffects": "Σε υπερβολική δόση: υπερασβεστιαιμία. Παρακολούθηση ασβεστίου ανά 6μηνο."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Βιταμίνη B12",
+    "dosage": "1000mcg", "frequency": "1x ημερησίως",
+    "_prescribedByEmail": "endo@medplatform.gr",
+    "startDateDaysAgo": 180, "isActive": true,
+    "reminders": [{ "time": "08:00", "channel": "push" }],
+    "plainDescription": "Μετφορμίνη μειώνει απορρόφηση Β12. Συμπλήρωμα για αποτροπή νευροπάθειας.",
+    "sideEffects": "Εξαιρετικά ασφαλής. Τυχόν περίσσεια αποβάλλεται από τα ούρα."
+  },
+  {
+    "_patientEmail": "patient3@test.com",
+    "name": "Omeprazole (Losec)",
+    "dosage": "20mg", "frequency": "1x ημερησίως πρωί νηστικός",
+    "_prescribedByEmail": "gp@medplatform.gr",
+    "startDateDaysAgo": 240, "isActive": true,
+    "reminders": [{ "time": "07:30", "channel": "push" }],
+    "plainDescription": "PPI (αναστολέας αντλίας πρωτονίων) για προστασία στομάχου από πολλαπλά φάρμακα.",
+    "sideEffects": "Μακροχρόνια χρήση: πιθανή μείωση Μg/Β12, αυξημένος κίνδυνος C. diff λοίμωξης."
+  }
+]
