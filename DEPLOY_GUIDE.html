@@ -282,6 +282,45 @@
 
     .cred-card p { color: #e2e8f0; font-size: 0.88rem; margin: 0; }
 
+    .seed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .seed-item {
+      background: #0f172a;
+      border: 1px solid #1e3a5f;
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .seed-item .name { color: #94a3b8; }
+    .seed-item .count { color: #38bdf8; font-weight: 700; font-size: 1rem; }
+
+    .demo-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .demo-list li {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #1e293b;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .demo-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .demo-list .icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; width: 1.4rem; text-align: center; }
+
     footer {
       text-align: center;
       margin-top: 3rem;
@@ -296,7 +335,7 @@
   <header>
     <h1>MedPlatform — Deployment Guide</h1>
     <p>Full-stack deploy (React + Node.js + MongoDB) for a 2–3 day preview window</p>
-    <span class="badge">Railway · MongoDB Atlas · Always-on · Free</span>
+    <span class="badge">Railway · MongoDB Atlas · Always-on · Free tier</span>
   </header>
 
   <div class="warning">
@@ -304,7 +343,7 @@
     <div>
       <strong>Never commit <code>.env</code> to GitHub.</strong>
       Add <code>.env</code> to your <code>.gitignore</code> before pushing.
-      All secrets (JWT keys, API keys) must be set as environment variables on the hosting platform.
+      All secrets (JWT keys, Anthropic API key) must be set as environment variables on the hosting platform — never hardcoded.
     </div>
   </div>
 
@@ -314,11 +353,8 @@
       <div class="step-number">0</div>
       <h2>Add .gitignore &amp; push to GitHub</h2>
     </div>
-    <p>Make sure <code>.env</code> files are excluded, then push the repo.</p>
+    <p>Make sure <code>.env</code> files and build artifacts are excluded, then push the repo.</p>
     <pre><code><span class="comment"># From the project root</span>
-echo ".env" >> .gitignore
-echo "node_modules/" >> .gitignore
-
 git init
 git add .
 git commit -m "initial commit"
@@ -326,6 +362,7 @@ git commit -m "initial commit"
 <span class="comment"># Create a new repo on github.com, then:</span>
 git remote add origin https://github.com/YOUR_USERNAME/medplatform.git
 git push -u origin main</code></pre>
+    <p>Verify your <code>.gitignore</code> at the root includes <code>node_modules/</code>, <code>dist/</code>, and <code>**/.env</code>.</p>
   </div>
 
   <!-- STEP 1 -->
@@ -336,13 +373,13 @@ git push -u origin main</code></pre>
     </div>
     <ol>
       <li>Go to <a href="https://mongodb.com/atlas" target="_blank">mongodb.com/atlas</a> → create a free account</li>
-      <li>Create a new project → build a <strong>Free (M0)</strong> cluster</li>
-      <li>Under <strong>Database Access</strong>, add a user with a strong password</li>
+      <li>Create a new project → build a <strong>Free (M0)</strong> cluster (512 MB — more than enough for seed data)</li>
+      <li>Under <strong>Database Access</strong>, add a user (e.g. <code>admin</code>) with a strong password</li>
       <li>Under <strong>Network Access</strong>, add IP <code>0.0.0.0/0</code> (allow all — fine for a short demo)</li>
-      <li>Click <strong>Connect → Drivers</strong> → copy the connection string:</li>
+      <li>Click <strong>Connect → Drivers</strong> → copy the connection string</li>
     </ol>
     <pre><code>mongodb+srv://&lt;user&gt;:&lt;password&gt;@cluster0.xxxxx.mongodb.net/BuildathonDB?retryWrites=true&amp;w=majority</code></pre>
-    <p>Save this string — you'll use it as <code>MONGODB_URI</code> in the next steps.</p>
+    <p>Save this string — you'll use it as <code>MONGODB_URI</code> in the next step.</p>
   </div>
 
   <!-- STEP 2 -->
@@ -355,7 +392,7 @@ git push -u origin main</code></pre>
       Go to <a href="https://railway.app" target="_blank">railway.app</a> → sign in with GitHub →
       <strong>New Project → Deploy from GitHub repo</strong> → select <code>medplatform</code>.
     </p>
-    <p>Railway will create one service by default. You need <strong>two services</strong> — add the second via <strong>+ New Service → GitHub Repo</strong> (same repo, different root dir).</p>
+    <p>Railway creates one service by default. You need <strong>two services</strong> — add the second via <strong>+ New Service → GitHub Repo</strong> (same repo, different root dir).</p>
 
     <div class="service-grid">
       <div class="service-card server">
@@ -385,14 +422,14 @@ git push -u origin main</code></pre>
         <tr><td><code>PORT</code></td><td>3001</td></tr>
         <tr><td><code>NODE_ENV</code></td><td>production</td></tr>
         <tr><td><code>MONGODB_URI</code></td><td>Your Atlas connection string from Step 1</td></tr>
-        <tr><td><code>JWT_SECRET</code></td><td>Your secret from <code>.env</code></td></tr>
-        <tr><td><code>JWT_REFRESH_SECRET</code></td><td>Your secret from <code>.env</code></td></tr>
+        <tr><td><code>JWT_SECRET</code></td><td>Your secret from <code>server/.env</code></td></tr>
+        <tr><td><code>JWT_REFRESH_SECRET</code></td><td>Your secret from <code>server/.env</code></td></tr>
         <tr><td><code>JWT_EXPIRES_IN</code></td><td>15m</td></tr>
         <tr><td><code>JWT_REFRESH_EXPIRES_IN</code></td><td>7d</td></tr>
-        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Your key from <code>.env</code></td></tr>
+        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Your key from <code>server/.env</code></td></tr>
         <tr><td><code>ANTHROPIC_MODEL</code></td><td>claude-sonnet-4-5</td></tr>
         <tr><td><code>ANTHROPIC_FAST_MODEL</code></td><td>claude-haiku-4-5</td></tr>
-        <tr><td><code>CLIENT_URL</code></td><td>Your Railway frontend URL (add after frontend is deployed)</td></tr>
+        <tr><td><code>CLIENT_URL</code></td><td>Your Railway frontend URL — add after frontend is deployed (used for CORS)</td></tr>
       </tbody>
     </table>
 
@@ -402,12 +439,13 @@ git push -u origin main</code></pre>
         <tr><th>Variable</th><th>Value</th></tr>
       </thead>
       <tbody>
-        <tr><td><code>VITE_API_URL</code></td><td>Your Railway backend URL (e.g. <code>https://medplatform-server.up.railway.app</code>)</td></tr>
+        <tr><td><code>VITE_API_URL</code></td><td>Your Railway backend URL, e.g. <code>https://medplatform-server.up.railway.app</code></td></tr>
       </tbody>
     </table>
 
     <p style="margin-top:1rem;">
-      Railway generates a public URL for each service automatically under <strong>Settings → Networking → Generate Domain</strong>.
+      Railway generates a public URL for each service under <strong>Settings → Networking → Generate Domain</strong>.
+      Deploy the backend first, copy its URL, then set it as <code>VITE_API_URL</code> before deploying the frontend.
     </p>
   </div>
 
@@ -415,70 +453,127 @@ git push -u origin main</code></pre>
   <div class="section">
     <div class="section-header">
       <div class="step-number">3</div>
-      <h2>Seed the database</h2>
+      <h2>Fix the Vite proxy for production</h2>
     </div>
-    <p>After the backend service is running, open the Railway dashboard → backend service → <strong>Settings → Shell</strong> tab and run:</p>
-    <pre><code>npm run seed</code></pre>
-    <p>This populates doctors, patients, and Q&amp;A data.</p>
+    <p>
+      The <code>vite.config.ts</code> dev proxy (<code>/api → localhost:3001</code>) is local-only.
+      In production all API calls must go to the real backend URL. Two options:
+    </p>
+
+    <h3>Option A — VITE_API_URL prefix (preferred)</h3>
+    <p>The API client (<code>client/src/api/</code>) should prefix every request with the env variable:</p>
+    <pre><code><span class="comment">// axios baseURL or fetch prefix</span>
+const BASE = import.meta.env.VITE_API_URL ?? ''
+axios.defaults.baseURL = `${BASE}/api/v1`</code></pre>
+
+    <h3>Option B — serve both from one Railway service</h3>
+    <p>Build the React app into <code>server/public/</code> and serve static files from Express. Simpler billing (one service) but couples frontend and backend deploys.</p>
   </div>
 
   <!-- STEP 4 -->
   <div class="section">
     <div class="section-header">
       <div class="step-number">4</div>
-      <h2>Fix the Vite proxy for production</h2>
+      <h2>Seed the database</h2>
     </div>
-    <p>
-      The current <code>vite.config.ts</code> proxies <code>/api</code> to <code>localhost:3001</code> — this only works locally.
-      In production the frontend must call the real backend URL. Two options:
-    </p>
+    <p>After the backend service is live, open Railway dashboard → backend service → <strong>Settings → Shell</strong> and run:</p>
+    <pre><code>npm run seed</code></pre>
+    <p>The seed script populates BuildathonDB with the following data:</p>
 
-    <h3>Option A — use VITE_API_URL in fetch calls (preferred)</h3>
-    <p>Wherever your frontend calls the API, prefix with the env variable:</p>
-    <pre><code><span class="comment">// Before</span>
-fetch('/api/doctors')
+    <div class="seed-grid">
+      <div class="seed-item"><span class="name">Doctors</span><span class="count">39</span></div>
+      <div class="seed-item"><span class="name">Q&amp;A entries</span><span class="count">78</span></div>
+      <div class="seed-item"><span class="name">Patients</span><span class="count">3</span></div>
+      <div class="seed-item"><span class="name">Appointments</span><span class="count">38</span></div>
+      <div class="seed-item"><span class="name">Medications</span><span class="count">28</span></div>
+      <div class="seed-item"><span class="name">Test Results</span><span class="count">14</span></div>
+      <div class="seed-item"><span class="name">AI Sessions</span><span class="count">6</span></div>
+      <div class="seed-item"><span class="name">Reminders</span><span class="count">10</span></div>
+      <div class="seed-item"><span class="name">Documents</span><span class="count">6</span></div>
+    </div>
 
-<span class="comment">// After</span>
-fetch(`${import.meta.env.VITE_API_URL}/api/doctors`)</code></pre>
-
-    <h3>Option B — keep the proxy, serve from same domain</h3>
-    <p>Build the React app into the server's <code>public/</code> folder and serve both from the same Railway service. Simpler but requires adding static-file serving to Express.</p>
+    <p style="margin-top:1rem;">Each patient also gets pre-seeded <strong>AI health insights</strong>, <strong>saved doctors</strong>, and <strong>doctor notes</strong> on completed appointments — so every feature is immediately demo-ready after seeding.</p>
   </div>
 
   <!-- Test credentials -->
   <div class="section">
     <div class="section-header">
       <div class="step-number">✓</div>
-      <h2>Test credentials</h2>
+      <h2>Test credentials (password: <code>Test1234!</code>)</h2>
     </div>
-    <p>Use these accounts to demo the platform after seeding:</p>
     <div class="creds">
       <div class="cred-card">
-        <div class="role">Patient</div>
-        <p>patient@test.com<br />Test1234!</p>
+        <div class="role">Patient 1 — Hypertension / Prediabetes</div>
+        <p>patient@test.com</p>
       </div>
       <div class="cred-card">
-        <div class="role">Doctor</div>
-        <p>doctor@test.com<br />Test1234!</p>
+        <div class="role">Patient 2 — PCOS / Anxiety / Migraine</div>
+        <p>patient2@test.com</p>
+      </div>
+      <div class="cred-card">
+        <div class="role">Patient 3 — T2 Diabetes / HTN / Knee OA</div>
+        <p>patient3@test.com</p>
+      </div>
+      <div class="cred-card">
+        <div class="role">Doctor — Cardiology</div>
+        <p>doctor@test.com</p>
       </div>
     </div>
+  </div>
+
+  <!-- Demo script -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">▶</div>
+      <h2>Demo script — key features to show</h2>
+    </div>
+    <ul class="demo-list">
+      <li>
+        <span class="icon">🏠</span>
+        <div><strong>Dashboard</strong> — AI health insights card (pre-generated), upcoming appointment cards, blood pressure chart. If an appointment is within 24h, an amber briefing banner appears with one-tap AI prep.</div>
+      </li>
+      <li>
+        <span class="icon">🔍</span>
+        <div><strong>Search</strong> — type a symptom or specialty; doctor cards with match scores appear alongside Q&amp;A results. Click a doctor card → slide-in drawer with full profile, availability, and booking CTA. Auto-searches when redirected from the AI assistant.</div>
+      </li>
+      <li>
+        <span class="icon">🤖</span>
+        <div><strong>Medical Assistant</strong> — streaming chat grounded in the patient's real data. Past sessions in the left sidebar. Source pills on messages open the full Q&amp;A thread. Booking card appears when AI recommends a specialist — shows previous doctors or redirects to search pre-filled with the specialty.</div>
+      </li>
+      <li>
+        <span class="icon">💬</span>
+        <div><strong>Assistant Popup</strong> — click 🧠 on any medication, test result, or appointment card to open the AI popup in the bottom-right corner without leaving the page. Contextual prefill sent automatically.</div>
+      </li>
+      <li>
+        <span class="icon">💊</span>
+        <div><strong>Health Records</strong> — three tabs: Medications (AI "why am I taking this?" accordion), Test Results (structured values, status badges, file attachments), Documents (vault with AI summaries).</div>
+      </li>
+      <li>
+        <span class="icon">📅</span>
+        <div><strong>Health History</strong> — four tabs: upcoming, past, all appointments, and a bar chart of appointments by month. Past appointments show doctor notes, diagnosis, and prescriptions.</div>
+      </li>
+      <li>
+        <span class="icon">👨‍👩‍👧</span>
+        <div><strong>Family Hub</strong> — add family members with tabbed Profile + Clinical form. Switch active member to scope the AI to that person's conditions.</div>
+      </li>
+    </ul>
   </div>
 
   <!-- Teardown -->
   <div class="section">
     <div class="section-header">
       <div class="step-number">!</div>
-      <h2>Teardown after 2–3 days</h2>
+      <h2>Teardown after demo</h2>
     </div>
-    <p>To stay within the free tier and avoid any charges:</p>
+    <p>To stay within free tier limits and avoid charges:</p>
     <ol>
       <li>Railway dashboard → your project → <strong>Settings → Delete Project</strong></li>
-      <li>MongoDB Atlas → Clusters → <strong>Terminate</strong> (or just leave the free M0 — it never expires)</li>
+      <li>MongoDB Atlas → Clusters → <strong>Terminate</strong> (or leave the free M0 — it never expires and costs nothing)</li>
     </ol>
   </div>
 
   <footer>
-    MedPlatform · Buildathon · Deployment guide generated 2026-05-13
+    MedPlatform · Buildathon · Last updated 2026-05-13
   </footer>
 
 </div>
