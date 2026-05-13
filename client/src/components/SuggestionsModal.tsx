@@ -19,7 +19,7 @@ export default function SuggestionsModal() {
       abortRef.current = controller;
       try {
         const token = localStorage.getItem('accessToken');
-        const response = await fetch('/api/v1/patient/suggestions', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL ?? ''}/api/v1/patient/suggestions`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
           signal: controller.signal,

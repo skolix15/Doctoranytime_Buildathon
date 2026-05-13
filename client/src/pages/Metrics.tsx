@@ -161,7 +161,7 @@ export default function Metrics() {
       const token = localStorage.getItem('accessToken');
       const body: Record<string, any> = {};
       if (inputMetrics) body.inputMetrics = inputMetrics;
-      const response = await fetch('/api/v1/patient/metrics/analyze', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL ?? ''}/api/v1/patient/metrics/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(body),

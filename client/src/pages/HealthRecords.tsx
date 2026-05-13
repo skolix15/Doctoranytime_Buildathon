@@ -130,7 +130,7 @@ export default function HealthRecords() {
     const q = overrideQuestion ?? aiQuestion;
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`/api/v1/results/${selectedResult}/ask`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL ?? ''}/api/v1/results/${selectedResult}/ask`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ question: q }),

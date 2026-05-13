@@ -93,7 +93,7 @@ export default function TestResults() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`/api/v1/results/${selected}/ask`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL ?? ''}/api/v1/results/${selected}/ask`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

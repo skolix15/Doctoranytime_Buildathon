@@ -467,7 +467,7 @@ export default function Assistant() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('/api/v1/assistant/message', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL ?? ''}/api/v1/assistant/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ message: text, sessionId })
