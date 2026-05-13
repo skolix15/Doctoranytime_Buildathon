@@ -127,7 +127,9 @@ export default function AssistantPopup() {
         style={{ maxHeight: minimized ? 'auto' : '560px' }}>
         {/* Header */}
         <div className="flex items-center gap-3 px-4 py-3 bg-primary text-white flex-shrink-0">
-          <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center text-sm">⚕</div>
+          <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+          </div>
           <div className="flex-1 min-w-0">
             <p className="font-semibold text-sm leading-tight">Medical Assistant</p>
             {!minimized && <p className="text-xs text-white/70 truncate">{popupPrefill ? 'Απάντηση σε εξέλιξη...' : 'Πώς μπορώ να βοηθήσω;'}</p>}

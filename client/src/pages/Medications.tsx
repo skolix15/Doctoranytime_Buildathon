@@ -44,7 +44,7 @@ export default function Medications() {
         {!activeMember && <button onClick={() => setAdding(true)} className="btn-primary text-sm">+ Προσθήκη</button>}
       </div>
 
-      {isLoading && <div className="grid grid-cols-2 gap-4">{[1,2,3,4].map(i => <div key={i} className="skeleton h-32 rounded-xl" />)}</div>}
+      {isLoading && <div className="grid grid-cols-2 gap-4">{[1, 2, 3, 4].map(i => <div key={i} className="skeleton h-32 rounded-xl" />)}</div>}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {meds?.map((med: any) => (
@@ -71,7 +71,7 @@ export default function Medications() {
                   title="Medical Assistant"
                   className="w-7 h-7 rounded-lg flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-50 transition-colors text-sm"
                 >
-                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                 </button>
                 <button onClick={() => setReminderMed(med)} title="Ορισμός υπενθύμισης"
                   className="w-7 h-7 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary-light transition-colors">

@@ -271,7 +271,7 @@ function MessageBubble({ message, bookingPrefill, onBook }: {
   return (
     <div className={`flex gap-3 ${isUser ? 'flex-row-reverse' : ''}`}>
       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1 ${isUser ? 'bg-primary text-white' : 'bg-gradient-to-br from-primary-light to-blue-100 text-primary'}`}>
-        {isUser ? 'Ε' : '⚕'}
+        {isUser ? 'Ε' : <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>}
       </div>
       <div className="max-w-[78%] space-y-2">
         {message.urgencyLevel === 'emergency' && (
@@ -610,7 +610,9 @@ export default function Assistant() {
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
         <div className="card p-3 mb-3 flex items-center gap-3 flex-shrink-0">
-          <div className="w-8 h-8 bg-primary-light rounded-xl flex items-center justify-center text-primary text-base flex-shrink-0">⚕</div>
+          <div className="w-8 h-8 bg-primary-light rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+          </div>
           <div className="min-w-0">
             <h1 className="font-semibold text-gray-900 text-sm leading-tight">MedAssist AI</h1>
             <p className="text-xs text-gray-500 truncate">Τεκμηριωμένες απαντήσεις από γιατρούς</p>
@@ -622,7 +624,9 @@ export default function Assistant() {
         <div className="flex-1 card p-4 overflow-y-auto space-y-5 mb-3 min-h-0">
           {messages.length === 0 && (
             <div className="h-full flex flex-col items-center justify-center text-center py-12">
-              <div className="text-5xl mb-4">⚕️</div>
+              <div className="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center mb-4">
+                <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+              </div>
               <h2 className="text-lg font-semibold text-gray-800 mb-2">Πώς μπορώ να σας βοηθήσω;</h2>
               <p className="text-sm text-gray-500 mb-6 max-w-md">Ρωτήστε οτιδήποτε για την υγεία σας. Οι απαντήσεις βασίζονται σε πραγματικές απαντήσεις γιατρών της πλατφόρμας.</p>
               <div className="grid grid-cols-2 gap-2 max-w-lg w-full">

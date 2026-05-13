@@ -15,7 +15,7 @@ export default function Navbar() {
   // Load family members once user is set
   useEffect(() => {
     if (!user) return;
-    api.get('/family').then(r => setMembers(r.data.data || [])).catch(() => {});
+    api.get('/family').then(r => setMembers(r.data.data || [])).catch(() => { });
   }, [user]);
 
   // Close dropdown on outside click
