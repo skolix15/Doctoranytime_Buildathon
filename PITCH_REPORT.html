@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedPlatform — Health Companion Buildathon Report</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --da-blue: #1a2b5e;
+      --da-orange: #e85d26;
+      --da-light: #f5f7ff;
+      --da-border: #e2e8f0;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+    /* ── HEADER ── */
+    .hero {
+      background: var(--da-blue);
+      color: #fff;
+      padding: 3rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .hero-logo .da { font-size: 1.4rem; font-weight: 900; letter-spacing: -0.02em; }
+    .hero-logo .da span { color: var(--da-orange); }
+    .hero-logo .sep { width: 1px; height: 1.5rem; background: rgba(255,255,255,0.3); }
+    .hero-logo .tag { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; }
+    .hero h1 span { color: var(--da-orange); }
+    .hero p { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 600px; }
+    .accent-bar { width: 3rem; height: 4px; background: var(--da-orange); border-radius: 2px; margin-bottom: 1.5rem; }
+
+    /* ── SECTION TITLES ── */
+    .section { margin-bottom: 3rem; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--da-orange);
+      margin-bottom: 0.5rem;
+    }
+    .section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--da-blue);
+      margin-bottom: 0.5rem; line-height: 1.25;
+    }
+    .section .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.75rem; }
+
+    /* ── PITCH CARDS ── */
+    .pitch-grid { display: grid; gap: 1rem; }
+
+    .pitch-card {
+      border: 1px solid var(--da-border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .pitch-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--da-orange);
+      border-radius: 4px 0 0 4px;
+    }
+    .pitch-card .q {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem;
+    }
+    .pitch-card .a { font-size: 0.95rem; color: var(--text); font-weight: 500; }
+
+    /* ── PILLARS ── */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 700px) { .pillars-grid { grid-template-columns: 1fr 1fr; } }
+
+    .pillar {
+      background: var(--da-blue);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
+    }
+    .pillar h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .pillar p { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-bottom: 1rem; }
+    .pillar-features { list-style: none; padding: 0; }
+    .pillar-features li {
+      font-size: 0.78rem; color: rgba(255,255,255,0.85);
+      padding: 0.25rem 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: flex-start; gap: 0.4rem;
+    }
+    .pillar-features li:first-child { border-top: none; }
+    .pillar-features li .dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--da-orange); flex-shrink: 0; margin-top: 0.45rem;
+    }
+
+    .pillar-note {
+      background: #fff8f5;
+      border: 1px solid #fcd5c0;
+      border-radius: 10px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.88rem;
+      color: #7c3415;
+      display: flex; gap: 0.6rem; align-items: flex-start;
+    }
+
+    /* ── USE CASES ── */
+    .use-cases { display: grid; gap: 1rem; }
+
+    .use-case {
+      border: 1px solid var(--da-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+    }
+
+    .use-case.achieved .uc-num { background: var(--da-blue); }
+    .use-case.anti .uc-num { background: #f1f5f9; }
+
+    .uc-num {
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.2rem;
+      padding: 1.25rem 0.5rem;
+    }
+
+    .use-case.achieved .uc-num .num {
+      font-size: 2rem; font-weight: 900; color: #fff; line-height: 1;
+    }
+    .use-case.anti .uc-num .num {
+      font-size: 2rem; font-weight: 900; color: var(--da-orange); line-height: 1;
+    }
+    .uc-num .badge {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.4rem; border-radius: 4px;
+    }
+    .use-case.achieved .badge { background: var(--da-orange); color: #fff; }
+    .use-case.anti .badge { background: #fde8dc; color: var(--da-orange); }
+
+    .uc-body { padding: 1.25rem 1.5rem; }
+    .uc-body h3 {
+      font-size: 1rem; font-weight: 700; color: var(--da-blue);
+      margin-bottom: 0.5rem;
+    }
+    .use-case.anti .uc-body h3 { color: var(--muted); }
+    .uc-body p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+
+    .uc-features { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .uc-feature {
+      font-size: 0.75rem; font-weight: 600;
+      background: var(--da-light); color: var(--da-blue);
+      border: 1px solid #c7d2fe;
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+    }
+    .use-case.anti .uc-feature {
+      background: #f1f5f9; color: var(--muted);
+      border-color: var(--da-border);
+    }
+    .anti-note {
+      font-size: 0.82rem; font-style: italic;
+      color: var(--da-orange); margin-top: 0.5rem;
+    }
+
+    /* ── SCORE ── */
+    .score-box {
+      background: var(--da-blue);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex; align-items: center; gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 600px) { .score-box { flex-direction: column; text-align: center; } }
+    .score-circle {
+      width: 90px; height: 90px; flex-shrink: 0;
+      border-radius: 50%;
+      background: conic-gradient(var(--da-orange) 0% 80%, rgba(255,255,255,0.15) 80% 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .score-circle .inner {
+      width: 68px; height: 68px;
+      background: var(--da-blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900; color: #fff;
+    }
+    .score-text h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .score-text p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+    /* ── FEATURE TABLE ── */
+    .feature-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .feature-table th {
+      text-align: left; padding: 0.6rem 1rem;
+      background: var(--da-light); color: var(--muted);
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--da-border);
+    }
+    .feature-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--da-border);
+      vertical-align: top;
+    }
+    .feature-table tr:last-child td { border-bottom: none; }
+    .feature-table .feature-name { font-weight: 600; color: var(--da-blue); }
+    .feature-table .pillars-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.2rem; }
+    .feature-table .pt {
+      font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.5rem;
+      border-radius: 4px; border: 1px solid;
+    }
+    .pt-medical { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+    .pt-timeline { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+    .pt-care { background: #fdf4ff; color: #7e22ce; border-color: #e9d5ff; }
+    .pt-personal { background: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+    .check { color: #16a34a; font-size: 1.1rem; }
+    .cross { color: #dc2626; font-size: 1.1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--da-border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer strong { color: var(--da-orange); }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <div class="da">doctor<span>anytime</span></div>
+      <div class="sep"></div>
+      <div class="tag">Health Companion Buildathon</div>
+    </div>
+    <div class="accent-bar"></div>
+    <h1>MedPlatform —<br><span>Health Companion Report</span></h1>
+    <p>How the features built map to the Companion vision, the four pillars, and the four dominant use cases.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── PITCH ── -->
+  <div class="section">
+    <div class="section-label">The Pitch</div>
+    <h2>What we built and why</h2>
+    <p class="subtitle">Answers to the buildathon submission questions.</p>
+
+    <div class="pitch-grid">
+      <div class="pitch-card">
+        <div class="q">What's the problem?</div>
+        <div class="a">Patients with chronic conditions turn to generic AI tools (ChatGPT etc.) for health guidance — tools that know nothing about them and can give dangerous generic advice, while their actual health data sits scattered across clinics, apps and paper.</div>
+      </div>
+      <div class="pitch-card">
+        <div class="q">Who has this problem?</div>
+        <div class="a">Patients managing one or more chronic conditions (hypertension, diabetes, PCOS, anxiety, osteoarthritis) who have ongoing medication, regular check-ups, and family members to track — and who currently use Google or ChatGPT to make sense of it all.</div>
+      </div>
+      <div class="pitch-card">
+        <div class="q">What's the solution?</div>
+        <div class="a">A personalised health companion integrated into Doctoranytime that reads the patient's actual records — appointments, medications, test results, family members, health metrics — before answering every question, booking every appointment, and generating every insight.</div>
+      </div>
+      <div class="pitch-card">
+        <div class="q">How does this serve the Companion vision?</div>
+        <div class="a">It activates all four pillars simultaneously: it stores the medical folder, visualises the health timeline, unifies chat + visits + follow-ups into one flow, and personalises every interaction using the patient's data. Every feature feeds back into the next, compounding personalisation over time.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCORE ── -->
+  <div class="score-box">
+    <div class="score-circle"><div class="inner">4/4</div></div>
+    <div class="score-text">
+      <h3>All four dominant use cases addressed</h3>
+      <p>The app covers every DOMINANT use case from the framework and correctly refuses the ANTI case (replacing the doctor). Personalization runs as a cross-cutting thread through all features.</p>
+    </div>
+  </div>
+
+  <!-- ── PILLARS ── -->
+  <div class="section">
+    <div class="section-label">Four Pillars of the Companion</div>
+    <h2>Which pillar each feature lives in</h2>
+    <p class="subtitle">Personalization is the band that runs through all of them.</p>
+
+    <div class="pillars-grid">
+      <div class="pillar">
+        <h3>📁 Medical Folder</h3>
+        <p>Your data, in one place</p>
+        <ul class="pillar-features">
+          <li><div class="dot"></div>Medications with AI explanations</li>
+          <li><div class="dot"></div>Test results with structured values & badges</li>
+          <li><div class="dot"></div>Document vault with AI summaries</li>
+          <li><div class="dot"></div>Family member profiles & clinical data</li>
+          <li><div class="dot"></div>Health metrics (BP, glucose, weight, sleep)</li>
+          <li><div class="dot"></div>Allergies, conditions, blood type</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3>📅 Timeline</h3>
+        <p>Your story, over time</p>
+        <ul class="pillar-features">
+          <li><div class="dot"></div>Appointment history (all specialties)</li>
+          <li><div class="dot"></div>Doctor notes, diagnosis, prescriptions per visit</li>
+          <li><div class="dot"></div>Monthly bar chart of visits</li>
+          <li><div class="dot"></div>120 days of health metric charts</li>
+          <li><div class="dot"></div>AI sessions sidebar with conversation history</li>
+          <li><div class="dot"></div>Medication start dates & active/inactive status</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3>🔗 Care, Unified</h3>
+        <p>Chats, visits, follow-ups</p>
+        <ul class="pillar-features">
+          <li><div class="dot"></div>Book appointments from inside AI chat</li>
+          <li><div class="dot"></div>AI popup on every page (no context switching)</li>
+          <li><div class="dot"></div>Pre-appointment briefing 24h before visit</li>
+          <li><div class="dot"></div>Doctor search with slide-in booking drawer</li>
+          <li><div class="dot"></div>Medication reminders & appointment alerts</li>
+          <li><div class="dot"></div>Pre-filled booking from chat data</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3>✨ Personalization</h3>
+        <p>Everything reflects you</p>
+        <ul class="pillar-features">
+          <li><div class="dot"></div>Health memory — AI recalls past sessions</li>
+          <li><div class="dot"></div>System prompt built from patient's real data</li>
+          <li><div class="dot"></div>AI insights generated from actual abnormal values</li>
+          <li><div class="dot"></div>Communication style preference (plain / technical)</li>
+          <li><div class="dot"></div>Family context switching in AI</li>
+          <li><div class="dot"></div>Drug interaction checks against active meds</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pillar-note">
+      ✦ <strong>Every AI response is generated with the patient's full context injected</strong> — conditions, allergies, active medications, upcoming appointments, health summary from past sessions, and current family member context. This is what makes it fundamentally different from ChatGPT.
+    </div>
+  </div>
+
+  <!-- ── USE CASES ── -->
+  <div class="section">
+    <div class="section-label">Four Use Cases — One Anti-Case</div>
+    <h2>Where we go deep. And where we say no.</h2>
+    <p class="subtitle">Each dominant use case is addressed by specific features. The anti-case is explicitly enforced.</p>
+
+    <div class="use-cases">
+
+      <div class="use-case achieved">
+        <div class="uc-num">
+          <div class="num">1</div>
+          <div class="badge">DOMINANT</div>
+        </div>
+        <div class="uc-body">
+          <h3>Make sense of what's happening right now</h3>
+          <p>Patients receive a test result, a new diagnosis, or a prescription and have no idea what it means. They need immediate, contextual explanation — not a generic Google result.</p>
+          <div class="uc-features">
+            <span class="uc-feature">🔬 AI analysis of test result values</span>
+            <span class="uc-feature">💊 "Why am I taking this?" per medication</span>
+            <span class="uc-feature">🤖 Medical Assistant with full health context</span>
+            <span class="uc-feature">🧠 AI popup on every page — zero friction</span>
+            <span class="uc-feature">📄 Document vault with AI summaries</span>
+            <span class="uc-feature">📊 Status badges: normal / high / low per value</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-case achieved">
+        <div class="uc-num">
+          <div class="num">2</div>
+          <div class="badge">DOMINANT</div>
+        </div>
+        <div class="uc-body">
+          <h3>Stay on track with care between visits</h3>
+          <p>Between appointments patients forget what was said, miss follow-ups, and lose continuity. The companion bridges the gap.</p>
+          <div class="uc-features">
+            <span class="uc-feature">📅 Pre-appointment briefing 24h before visit</span>
+            <span class="uc-feature">📝 Doctor notes & prescriptions per appointment</span>
+            <span class="uc-feature">⏰ Medication & appointment reminders</span>
+            <span class="uc-feature">🧠 AI health memory across sessions</span>
+            <span class="uc-feature">💬 "Prepare questions for my doctor" one-tap</span>
+            <span class="uc-feature">📋 AI session sidebar — revisit past conversations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-case achieved">
+        <div class="uc-num">
+          <div class="num">3</div>
+          <div class="badge">DOMINANT</div>
+        </div>
+        <div class="uc-body">
+          <h3>Keep my (and my family's) health in one place</h3>
+          <p>Managing health for a family with different conditions across different doctors means juggling papers, apps and memory. One unified record changes this.</p>
+          <div class="uc-features">
+            <span class="uc-feature">👨‍👩‍👧 Family Hub — full profiles per member</span>
+            <span class="uc-feature">🔄 AI context switch per family member</span>
+            <span class="uc-feature">💊 Per-member medications & conditions</span>
+            <span class="uc-feature">📁 Shared document vault</span>
+            <span class="uc-feature">📊 Health metrics per patient</span>
+            <span class="uc-feature">🏥 All appointment history in one timeline</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-case achieved">
+        <div class="uc-num">
+          <div class="num">4</div>
+          <div class="badge">DOMINANT</div>
+        </div>
+        <div class="uc-body">
+          <h3>Daily life, not just doctor visits</h3>
+          <p>Health happens every day — medication timing, symptom questions, metric tracking, small decisions. The companion is present in daily life, not just at appointment time.</p>
+          <div class="uc-features">
+            <span class="uc-feature">💬 AI popup accessible from every page</span>
+            <span class="uc-feature">📈 Daily health metric logging & charts</span>
+            <span class="uc-feature">💡 Proactive AI insights on dashboard</span>
+            <span class="uc-feature">⏰ Daily medication reminders</span>
+            <span class="uc-feature">🔍 Instant doctor search with booking</span>
+            <span class="uc-feature">🧠 "Ask AI" on any medication or test</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-case anti">
+        <div class="uc-num">
+          <div class="num">✕</div>
+          <div class="badge">ANTI</div>
+        </div>
+        <div class="uc-body">
+          <h3>Replace the doctor</h3>
+          <p>The platform is explicitly designed NOT to replace clinical judgment. The AI answers health questions using patient data and doctor-sourced Q&A — but every path leads back to a real doctor.</p>
+          <div class="uc-features">
+            <span class="uc-feature">Confidence scores on every AI response</span>
+            <span class="uc-feature">Sources from real doctor Q&A threads</span>
+            <span class="uc-feature">Booking CTA whenever diagnosis is mentioned</span>
+            <span class="uc-feature">System prompt: "never replace a doctor"</span>
+          </div>
+          <div class="anti-note">✦ Every AI answer ends with a path to a real Doctoranytime doctor.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FEATURE MAP ── -->
+  <div class="section">
+    <div class="section-label">Complete Feature Map</div>
+    <h2>Every feature mapped to pillars</h2>
+    <p class="subtitle">Which pillar each built feature contributes to.</p>
+
+    <table class="feature-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Pillars</th>
+          <th>Built</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="feature-name">Medical Assistant — Streaming RAG Chat</div>
+            <div style="font-size:0.8rem;color:#64748b">Full-screen chat grounded in patient data, SSE streaming, confidence scores</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-personal">Personalization</span><span class="pt pt-care">Care unified</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">AI Health Memory</div>
+            <div style="font-size:0.8rem;color:#64748b">Session summaries stored, injected into next conversation's system prompt</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-personal">Personalization</span><span class="pt pt-timeline">Timeline</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">AI Popup — Always Available</div>
+            <div style="font-size:0.8rem;color:#64748b">Fixed bottom-right bubble on every page, contextual prefill from each section</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-care">Care unified</span><span class="pt pt-personal">Personalization</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Book Appointment from Chat</div>
+            <div style="font-size:0.8rem;color:#64748b">AI recommends specialty → booking card in-chat → previous doctors or search redirect</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-care">Care unified</span><span class="pt pt-personal">Personalization</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Pre-Appointment AI Briefing</div>
+            <div style="font-size:0.8rem;color:#64748b">Amber banner 24h before appointment, one-tap AI question preparation</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-care">Care unified</span><span class="pt pt-timeline">Timeline</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Doctor Search with Slide-in Drawer</div>
+            <div style="font-size:0.8rem;color:#64748b">Keyword/symptom search, match scores, full profile drawer, slot picker, booking</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-care">Care unified</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Medications Tab with AI Explanation</div>
+            <div style="font-size:0.8rem;color:#64748b">"Why am I taking this?" accordion per medication, drug interaction awareness</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-medical">Medical folder</span><span class="pt pt-personal">Personalization</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Test Results with AI Analysis</div>
+            <div style="font-size:0.8rem;color:#64748b">Structured values, status badges (normal/high/low), AI explanation, file attachments</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-medical">Medical folder</span><span class="pt pt-personal">Personalization</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Document Vault</div>
+            <div style="font-size:0.8rem;color:#64748b">Upload MRI, blood tests, imaging; AI summary per document; share with doctor</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-medical">Medical folder</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Health History — 4-tab Timeline</div>
+            <div style="font-size:0.8rem;color:#64748b">Upcoming, past, all, chart view; doctor notes + diagnosis + prescriptions per visit</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-timeline">Timeline</span><span class="pt pt-medical">Medical folder</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Health Metrics Charts</div>
+            <div style="font-size:0.8rem;color:#64748b">120 days of BP, glucose, weight, steps, heart rate, sleep — manual entry + external apps</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-timeline">Timeline</span><span class="pt pt-medical">Medical folder</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Proactive AI Dashboard Insights</div>
+            <div style="font-size:0.8rem;color:#64748b">3 insight cards (trend / alert / recommendation) generated from patient's actual data, cached 6h</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-personal">Personalization</span><span class="pt pt-medical">Medical folder</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Family Hub</div>
+            <div style="font-size:0.8rem;color:#64748b">Full profiles per member, AI context switching, conditions/allergies/meds per member</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-medical">Medical folder</span><span class="pt pt-personal">Personalization</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Reminders</div>
+            <div style="font-size:0.8rem;color:#64748b">Daily recurring medication reminders, upcoming appointment alerts</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-care">Care unified</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">AI Sessions Sidebar</div>
+            <div style="font-size:0.8rem;color:#64748b">Past conversations listed, first message as title, reload any session</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-timeline">Timeline</span><span class="pt pt-personal">Personalization</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Onboarding Guide</div>
+            <div style="font-size:0.8rem;color:#64748b">9-step interactive guide, auto-shows on first login, replay from Settings</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-care">Care unified</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feature-name">Q&A Source Modal</div>
+            <div style="font-size:0.8rem;color:#64748b">AI message sources link to real doctor Q&A threads with all answers and votes</div>
+          </td>
+          <td><div class="pillars-tags"><span class="pt pt-personal">Personalization</span><span class="pt pt-care">Care unified</span></div></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  <strong>MedPlatform</strong> · Doctoranytime Health Companion Buildathon · May 2026
+</footer>
+
+</body>
+</html>
