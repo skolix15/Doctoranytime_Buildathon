@@ -334,16 +334,16 @@
 
   <header>
     <h1>MedPlatform — Deployment Guide</h1>
-    <p>Full-stack deploy (React + Node.js + MongoDB) for a 2–3 day preview window</p>
-    <span class="badge">Railway · MongoDB Atlas · Always-on · Free tier</span>
+    <p>Full-stack deploy (React + Node.js + MongoDB) — Docker Compose or Railway</p>
+    <span class="badge">Docker Compose · nginx · MongoDB · Node.js</span>
   </header>
 
   <div class="warning">
     <span class="icon">⚠️</span>
     <div>
       <strong>Never commit <code>.env</code> to GitHub.</strong>
-      Add <code>.env</code> to your <code>.gitignore</code> before pushing.
-      All secrets (JWT keys, Anthropic API key) must be set as environment variables on the hosting platform — never hardcoded.
+      The repo includes a <code>.env.example</code> — copy it to <code>.env</code> and fill in your secrets before running anything.
+      The actual <code>.env</code> is listed in <code>.gitignore</code>.
     </div>
   </div>
 
@@ -351,133 +351,64 @@
   <div class="section">
     <div class="section-header">
       <div class="step-number">0</div>
-      <h2>Add .gitignore &amp; push to GitHub</h2>
+      <h2>Create your <code>.env</code> file</h2>
     </div>
-    <p>Make sure <code>.env</code> files and build artifacts are excluded, then push the repo.</p>
-    <pre><code><span class="comment"># From the project root</span>
-git init
-git add .
-git commit -m "initial commit"
-
-<span class="comment"># Create a new repo on github.com, then:</span>
-git remote add origin https://github.com/YOUR_USERNAME/medplatform.git
-git push -u origin main</code></pre>
-    <p>Verify your <code>.gitignore</code> at the root includes <code>node_modules/</code>, <code>dist/</code>, and <code>**/.env</code>.</p>
+    <p>Copy the example file and fill in your Anthropic API key and JWT secrets:</p>
+    <pre><code>cp .env.example .env</code></pre>
+    <table class="env-table">
+      <thead><tr><th>Variable</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>JWT_SECRET</code></td><td>Any random 32+ character string</td></tr>
+        <tr><td><code>JWT_REFRESH_SECRET</code></td><td>Any different random 32+ character string</td></tr>
+        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Your <code>sk-ant-...</code> key</td></tr>
+        <tr><td><code>VITE_API_URL</code></td><td><code>http://localhost:3001</code> for local; public backend URL for remote</td></tr>
+        <tr><td><code>CLIENT_URL</code></td><td><code>http://localhost:5173</code> for local; public frontend URL for remote</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:0.75rem;">MongoDB credentials (<code>admin / vamos</code>) are already wired between the <code>mongo</code> and <code>server</code> services in <code>docker-compose.yml</code> — no changes needed for local runs.</p>
   </div>
 
   <!-- STEP 1 -->
   <div class="section">
     <div class="section-header">
       <div class="step-number">1</div>
-      <h2>Create a free MongoDB Atlas cluster</h2>
+      <h2>Start all services with Docker Compose</h2>
     </div>
-    <ol>
-      <li>Go to <a href="https://mongodb.com/atlas" target="_blank">mongodb.com/atlas</a> → create a free account</li>
-      <li>Create a new project → build a <strong>Free (M0)</strong> cluster (512 MB — more than enough for seed data)</li>
-      <li>Under <strong>Database Access</strong>, add a user (e.g. <code>admin</code>) with a strong password</li>
-      <li>Under <strong>Network Access</strong>, add IP <code>0.0.0.0/0</code> (allow all — fine for a short demo)</li>
-      <li>Click <strong>Connect → Drivers</strong> → copy the connection string</li>
-    </ol>
-    <pre><code>mongodb+srv://&lt;user&gt;:&lt;password&gt;@cluster0.xxxxx.mongodb.net/BuildathonDB?retryWrites=true&amp;w=majority</code></pre>
-    <p>Save this string — you'll use it as <code>MONGODB_URI</code> in the next step.</p>
+    <p>The repo includes a <code>docker-compose.yml</code> that spins up three containers: <strong>mongo</strong>, <strong>server</strong> (Node.js), and <strong>client</strong> (React + nginx). Requires Docker Desktop or Docker Engine with the Compose plugin.</p>
+    <pre><code><span class="comment"># Build images and start in detached mode</span>
+docker compose up --build -d</code></pre>
+
+    <div class="service-grid">
+      <div class="service-card server">
+        <div class="label">server — Node.js :3001</div>
+        <ul>
+          <li><span>Image</span><span>node:20-alpine (multi-stage)</span></li>
+          <li><span>Port</span><span>3001 → 3001</span></li>
+          <li><span>DB</span><span>mongo container (internal)</span></li>
+        </ul>
+      </div>
+      <div class="service-card client">
+        <div class="label">client — nginx :5173</div>
+        <ul>
+          <li><span>Image</span><span>nginx:alpine (static build)</span></li>
+          <li><span>Port</span><span>5173 → 80</span></li>
+          <li><span>Routing</span><span>try_files for React Router</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;">After startup, check all three containers are healthy:</p>
+    <pre><code>docker compose ps</code></pre>
   </div>
 
   <!-- STEP 2 -->
   <div class="section">
     <div class="section-header">
       <div class="step-number">2</div>
-      <h2>Deploy on Railway</h2>
-    </div>
-    <p>
-      Go to <a href="https://railway.app" target="_blank">railway.app</a> → sign in with GitHub →
-      <strong>New Project → Deploy from GitHub repo</strong> → select <code>medplatform</code>.
-    </p>
-    <p>Railway creates one service by default. You need <strong>two services</strong> — add the second via <strong>+ New Service → GitHub Repo</strong> (same repo, different root dir).</p>
-
-    <div class="service-grid">
-      <div class="service-card server">
-        <div class="label">Service 1 — Backend</div>
-        <ul>
-          <li><span>Root dir</span><span><code>server</code></span></li>
-          <li><span>Build</span><span><code>npm install && npm run build</code></span></li>
-          <li><span>Start</span><span><code>npm start</code></span></li>
-        </ul>
-      </div>
-      <div class="service-card client">
-        <div class="label">Service 2 — Frontend</div>
-        <ul>
-          <li><span>Root dir</span><span><code>client</code></span></li>
-          <li><span>Build</span><span><code>npm install && npm run build</code></span></li>
-          <li><span>Start</span><span><code>npx serve dist -p $PORT</code></span></li>
-        </ul>
-      </div>
-    </div>
-
-    <h3>Backend environment variables</h3>
-    <table class="env-table">
-      <thead>
-        <tr><th>Variable</th><th>Value</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>PORT</code></td><td>3001</td></tr>
-        <tr><td><code>NODE_ENV</code></td><td>production</td></tr>
-        <tr><td><code>MONGODB_URI</code></td><td>Your Atlas connection string from Step 1</td></tr>
-        <tr><td><code>JWT_SECRET</code></td><td>Your secret from <code>server/.env</code></td></tr>
-        <tr><td><code>JWT_REFRESH_SECRET</code></td><td>Your secret from <code>server/.env</code></td></tr>
-        <tr><td><code>JWT_EXPIRES_IN</code></td><td>15m</td></tr>
-        <tr><td><code>JWT_REFRESH_EXPIRES_IN</code></td><td>7d</td></tr>
-        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Your key from <code>server/.env</code></td></tr>
-        <tr><td><code>ANTHROPIC_MODEL</code></td><td>claude-sonnet-4-5</td></tr>
-        <tr><td><code>ANTHROPIC_FAST_MODEL</code></td><td>claude-haiku-4-5</td></tr>
-        <tr><td><code>CLIENT_URL</code></td><td>Your Railway frontend URL — add after frontend is deployed (used for CORS)</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Frontend environment variables</h3>
-    <table class="env-table">
-      <thead>
-        <tr><th>Variable</th><th>Value</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>VITE_API_URL</code></td><td>Your Railway backend URL, e.g. <code>https://medplatform-server.up.railway.app</code></td></tr>
-      </tbody>
-    </table>
-
-    <p style="margin-top:1rem;">
-      Railway generates a public URL for each service under <strong>Settings → Networking → Generate Domain</strong>.
-      Deploy the backend first, copy its URL, then set it as <code>VITE_API_URL</code> before deploying the frontend.
-    </p>
-  </div>
-
-  <!-- STEP 3 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-number">3</div>
-      <h2>Fix the Vite proxy for production</h2>
-    </div>
-    <p>
-      The <code>vite.config.ts</code> dev proxy (<code>/api → localhost:3001</code>) is local-only.
-      In production all API calls must go to the real backend URL. Two options:
-    </p>
-
-    <h3>Option A — VITE_API_URL prefix (preferred)</h3>
-    <p>The API client (<code>client/src/api/</code>) should prefix every request with the env variable:</p>
-    <pre><code><span class="comment">// axios baseURL or fetch prefix</span>
-const BASE = import.meta.env.VITE_API_URL ?? ''
-axios.defaults.baseURL = `${BASE}/api/v1`</code></pre>
-
-    <h3>Option B — serve both from one Railway service</h3>
-    <p>Build the React app into <code>server/public/</code> and serve static files from Express. Simpler billing (one service) but couples frontend and backend deploys.</p>
-  </div>
-
-  <!-- STEP 4 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-number">4</div>
       <h2>Seed the database</h2>
     </div>
-    <p>After the backend service is live, open Railway dashboard → backend service → <strong>Settings → Shell</strong> and run:</p>
-    <pre><code>npm run seed</code></pre>
+    <p>Run the seed script inside the <code>server</code> container once after the first <code>up</code>:</p>
+    <pre><code>docker compose exec server node dist/scripts/seed.js</code></pre>
     <p>The seed script populates BuildathonDB with the following data:</p>
 
     <div class="seed-grid">
@@ -563,12 +494,30 @@ axios.defaults.baseURL = `${BASE}/api/v1`</code></pre>
   <div class="section">
     <div class="section-header">
       <div class="step-number">!</div>
-      <h2>Teardown after demo</h2>
+      <h2>Stop / teardown</h2>
     </div>
-    <p>To stay within free tier limits and avoid charges:</p>
+    <pre><code><span class="comment"># Stop containers (keeps data volume)</span>
+docker compose down
+
+<span class="comment"># Stop and delete everything including the MongoDB data volume</span>
+docker compose down -v</code></pre>
+  </div>
+
+  <!-- Railway alternative -->
+  <div class="section">
+    <div class="section-header">
+      <div class="step-number">↗</div>
+      <h2>Alternative — deploy publicly on Railway</h2>
+    </div>
+    <p>If you need a public URL (e.g. to share with judges), Railway can host all three services for free from the same GitHub repo. The <code>Dockerfile</code>s in <code>server/</code> and <code>client/</code> are already Railway-compatible.</p>
     <ol>
-      <li>Railway dashboard → your project → <strong>Settings → Delete Project</strong></li>
-      <li>MongoDB Atlas → Clusters → <strong>Terminate</strong> (or leave the free M0 — it never expires and costs nothing)</li>
+      <li>Push the repo to GitHub</li>
+      <li>Go to <a href="https://railway.app" target="_blank">railway.app</a> → <strong>New Project → Deploy from GitHub</strong></li>
+      <li>Add <strong>three services</strong>: one pointing to <code>server/</code>, one to <code>client/</code>, and one using the <strong>MongoDB</strong> template from the Railway marketplace</li>
+      <li>On the server service, set all the same env vars from Step 0, plus <code>MONGODB_URI</code> from the Railway MongoDB service (Railway injects this automatically if you link the services)</li>
+      <li>On the client service, set <code>VITE_API_URL</code> to the Railway backend public URL</li>
+      <li>Railway generates public domains under <strong>Settings → Networking → Generate Domain</strong> for each service</li>
+      <li>Run <code>npm run seed</code> once via the Railway backend shell</li>
     </ol>
   </div>
 
