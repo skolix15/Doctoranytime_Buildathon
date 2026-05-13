@@ -124,8 +124,16 @@ Four tabs: **Επερχόμενα · Προηγούμενα · Όλα · 📊 Γ
 - Historical health metric charts (blood pressure, glucose, weight, steps, heart rate, sleep)
 - Manual metric entry
 
+### Onboarding Guide
+- 9-step interactive guide that auto-launches on first login
+- Covers every feature with examples and try-it tips
+- ✕ button on every slide to dismiss at any time
+- Re-accessible from **Settings → Οδηγός Χρήσης** button (replays from slide 1)
+- Last slide has quick-action buttons to jump directly to key pages
+
 ### Settings (`/settings`)
 - Profile edit form, notification preferences, language, budget range
+- **Οδηγός Χρήσης** button to replay the onboarding guide
 
 ---
 

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '../api/client';
+import OnboardingGuide, { STORAGE_KEY } from '../components/OnboardingGuide';
 
 const BLOOD_TYPES = ['—', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 const COMM_STYLES: Record<string, string> = {
@@ -34,6 +35,7 @@ export default function Settings() {
   });
 
   const [tab, setTab] = useState<'personal' | 'medical' | 'account'>('personal');
+  const [showGuide, setShowGuide] = useState(false);
   const [form, setForm] = useState<any>(null);
   const initialized = useRef(false);
   const [toast, setToast] = useState(false);
@@ -107,7 +109,17 @@ export default function Settings() {
         </div>
       )}
 
-      <h1 className="text-xl font-bold text-gray-900">Ρυθμίσεις</h1>
+      {showGuide && <OnboardingGuide onClose={() => setShowGuide(false)} />}
+
+      <div className="flex items-center justify-between">
+        <h1 className="text-xl font-bold text-gray-900">Ρυθμίσεις</h1>
+        <button
+          onClick={() => { localStorage.removeItem(STORAGE_KEY); setShowGuide(true); }}
+          className="flex items-center gap-2 text-sm text-indigo-600 hover:text-indigo-700 font-medium bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-lg transition-colors"
+        >
+          🗺️ Οδηγός Χρήσης
+        </button>
+      </div>
 
       {/* Tabs */}
       <div className="flex gap-1 bg-gray-100 rounded-xl p-1">
